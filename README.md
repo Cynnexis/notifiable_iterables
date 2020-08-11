@@ -1,6 +1,10 @@
 # notifiable_iterables
 
+![Notifiable Iterables CI/CD](https://github.com/Cynnexis/notifiable_iterables/workflows/Notifiable%20Iterables%20CI/CD/badge.svg) ![language: dart](https://img.shields.io/badge/lang-dart-03599C) ![sdk: flutter](https://img.shields.io/badge/sdk-flutter-45D1FD.svg) ![license: BSD](https://img.shields.io/badge/license-BSD-blue.svg)
+
 Provides iterables that implements the [`ChangeNotifier`](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html) class.
+
+**GitHub:** https://github.com/Cynnexis/notifiable_iterables
 
 ## Getting Started
 
