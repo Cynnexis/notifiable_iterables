@@ -17,6 +17,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   //region PROPERTIES
 
+  @override
   int get length => _values.length;
 
   @override
@@ -45,8 +46,10 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     notifyListeners();
   }
 
+  @override
   bool get isEmpty => _values.isEmpty;
 
+  @override
   bool get isNotEmpty => _values.isNotEmpty;
 
   @override
@@ -65,14 +68,21 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   //region CONSTRUCTORS
 
+  /// Create an empty [NotifiableList].
+  ///
+  /// If [length] is not null, it will create a fixed-size list. Otherwise, the list will be expandable.
   NotifiableList([int length]) : super() {
     _values = length == null ? List<E>() : List<E>(length);
   }
 
+  /// Create a [NotifiableList] by adding all elements of [elements] of type [E].
+  @override
   NotifiableList.of(Iterable<E> elements, {bool growable: true}) : super() {
     _values = List<E>.of(elements, growable: growable);
   }
 
+  /// Create a [NotifiableList] by adding all elements from [elements], regardless of their type.
+  @override
   NotifiableList.from(Iterable<dynamic> elements, {bool growable: true}) : super() {
     _values = List<E>.from(elements, growable: growable);
   }
@@ -200,8 +210,9 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   //region LIST OVERRIDES
 
   @override
-  Set<E> toSet() => Set<E>.of(_values);
+  Set<E> toSet() => _values.toSet();
 
+  /// Creates a [NotifiableSet] containing the same elements as this list.
   NotifiableSet<E> toNotifiableSet() => NotifiableSet<E>.of(_values);
 
   @override
@@ -255,6 +266,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   @override
   List<E> toList({bool growable = true}) => _values.toList(growable: growable);
 
+  /// Create a [NotifiableList] containing the same elements as this list.
   NotifiableList<E> toNotifiableList({bool growable = true}) => NotifiableList.of(_values, growable: growable);
 
   @override
@@ -266,6 +278,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   @override
   Map<int, E> asMap() => _values.asMap();
 
+  /// Return a [NotifiableMap] where the keys are the indices and the values the elements of this list.
   NotifiableMap<int, E> asNotifiableMap() => NotifiableMap<int, E>.of(asMap());
 
   @override

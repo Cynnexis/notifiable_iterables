@@ -34,14 +34,17 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
 
   //region CONSTRUCTORS
 
+  /// Create an empty [NotifiableMap].
   NotifiableMap() : super() {
     _values = Map<K, V>();
   }
 
+  /// Create a [NotifiableMap] by adding all elements of [other] of types [K], [V].
   NotifiableMap.of(Map<K, V> other) : super() {
     _values = Map<K, V>.of(other);
   }
 
+  /// Create a [NotifiableMap] by adding all elements from [other], regardless of their type.
   NotifiableMap.from(Map<K, V> other) : super() {
     _values = Map<K, V>.from(other);
   }
@@ -121,6 +124,7 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
 
   //region OPERATORS
 
+  /// Creates a new [NotifiableMap] that contains the entries of this map and the elements of [other] in that order.
   NotifiableMap<K, V> operator +(NotifiableMap<K, V> other) {
     NotifiableMap<K, V> newSet = NotifiableMap<K, V>.of(_values);
     newSet.addAll(other);

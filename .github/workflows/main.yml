@@ -1,6 +1,14 @@
 name: Notifiable Iterables CI/CD
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - master
+      - 'cicd/**'
+  push:
+    branches:
+      - master
+      - 'cicd/**'
 
 jobs:
   lint:
@@ -26,3 +34,21 @@ jobs:
         id: notifiable-iterables_test
         with:
           args: "test"
+
+  release:
+    runs-on: ubuntu-18.04
+    name: Create a release
+    needs: [lint, test]
+    if: github.event_name == 'pull_request' && github.base_ref == 'master' || contains(github.ref, 'cicd/')
+    steps:
+      - name: Create a release for notifiable_iterables
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.sha }}
+          release_name: ${{ github.sha }}
+          body: "Ref: ${{ github.ref }} SHA: ${{ github.sha }}"
+          draft: true
+          prerelease: false

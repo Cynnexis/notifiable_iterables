@@ -62,9 +62,15 @@ Those classes can be uses exactly like their iterable equivalent.
 **Example:**
 
 ```dart
+// Create a notifiable list
 NotifiableList<int> list = NotifiableList<int>.of(<int>[0, 1, 2, 3]);
 print(list[2].toString()); // prints "2"
-list[3] = 4; // Notify the listeners
+
+// Add a listener
+list.addListener(() => print("New list: $list"));
+
+// Change the list
+list[3] = 4; // Notify the listeners, the console will show the updated list
 ```
 
 ## Build With

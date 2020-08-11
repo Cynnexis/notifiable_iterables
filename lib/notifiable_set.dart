@@ -15,6 +15,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   //region PROPERTIES
 
+  @override
   int get length => _values.length;
 
   @override
@@ -23,8 +24,10 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   @override
   E get last => _values.last;
 
+  @override
   bool get isEmpty => _values.isEmpty;
 
+  @override
   bool get isNotEmpty => _values.isNotEmpty;
 
   @override
@@ -40,14 +43,17 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   //region CONSTRUCTORS
 
+  /// Create an empty [NotifiableSet].
   NotifiableSet() : super() {
     _values = Set<E>();
   }
 
+  /// Create a [NotifiableSet] by adding all elements of [elements] of type [E].
   NotifiableSet.of(Iterable<E> elements) : super() {
     _values = Set<E>.of(elements);
   }
 
+  /// Create a [NotifiableSet] by adding all elements from [elements], regardless of their type.
   NotifiableSet.from(Iterable<dynamic> elements) : super() {
     _values = Set<E>.from(elements);
   }
@@ -117,20 +123,30 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
     notifyListeners();
   }
 
-  void update(int index, E newValue) {
+  /// Set the element at [index] to [newValue].
+  ///
+  /// The old value at [index] is returned. The listeners will be notified.
+  E update(int index, E newValue) {
+    E oldValue = elementAt(index);
     replace(elementAt(index), newValue);
+    return oldValue;
   }
 
+  /// Replace the [oldValue] with [newValue] if found.
+  ///
+  ///  The listeners will be notified if [oldValue] is found.
   void replace(E oldValue, E newValue) {
-    int oldHash = _values.hashCode;
+    bool found = false;
     _values = Set<E>.of(_values.map<E>((E e) {
-      if (e == oldValue)
+      if (e == oldValue) {
+        found = true;
         return newValue;
-      else
+      } else {
         return e;
+      }
     }));
 
-    if (oldHash != _values.hashCode) notifyListeners();
+    if (found) notifyListeners();
   }
 
   //region SET OVERRIDES
@@ -138,6 +154,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   @override
   Set<E> toSet() => Set<E>.of(_values);
 
+  /// Creates a [NotifiableSet] containing the same elements as this set.
   NotifiableSet<E> toNotifiableSet() => NotifiableSet<E>.of(_values);
 
   @override
@@ -191,6 +208,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   @override
   List<E> toList({bool growable = true}) => _values.toList(growable: growable);
 
+  /// Create a [NotifiableList] containing the same elements as this set.
   NotifiableList<E> toNotifiableList({bool growable = true}) => NotifiableList.of(_values, growable: growable);
 
   @override
@@ -199,6 +217,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   @override
   Iterable<T> whereType<T>() => _values.whereType<T>();
 
+  /// Return a [Map] where the keys are the indices and the values the elements of this set.
   Map<int, E> asMap() {
     Map<int, E> map = Map<int, E>();
     for (int i = 0; i < length; i++) map[i] = elementAt(i);
@@ -206,6 +225,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
     return map;
   }
 
+  /// Return a [NotifiableMap] where the keys are the indices and the values the elements of this set.
   NotifiableMap<int, E> asNotifiableMap() => NotifiableMap<int, E>.of(asMap());
 
   @override
@@ -223,6 +243,9 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   @override
   E lookup(Object object) => _values.lookup(object);
 
+  /// Iterate over the set and return the first element matching [test].
+  ///
+  /// If [start] is not null, the starting index will be changed. If no elements match [test], then `-1` is returned.
   int indexWhere(bool test(E element), [int start = 0]) {
     for (int i = start; i < length; i++) {
       E value = elementAt(i);
@@ -232,7 +255,10 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
     return -1;
   }
 
-  int indexOf(E element, [int start = 0]) => indexWhere((value) => element == value);
+  /// Search for [element] starting from [start] and return its index.
+  ///
+  /// If the element does not exist, `-1` is returned.
+  int indexOf(E element, [int start = 0]) => indexWhere((value) => element == value, start);
 
   @override
   NotifiableSet<R> cast<R>() => NotifiableSet<R>.of(_values.cast<R>());
@@ -241,14 +267,17 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   //region OPERATORS
 
+  /// Creates a new [NotifiableSet] that contains the elements of this set and the elements of [other] in that order.
   NotifiableSet<E> operator +(Iterable<E> other) {
     NotifiableSet<E> newSet = NotifiableSet<E>.of(_values);
     newSet.addAll(other);
     return newSet;
   }
 
+  /// Returns the element at [index].
   E operator [](int index) => _values.elementAt(index);
 
+  /// Update the element at [index] with the new value [value].
   void operator []=(int index, E value) => this.update(index, value);
 
   @override
