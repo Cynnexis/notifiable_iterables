@@ -48,14 +48,7 @@ flutter run
 To use this library, you need to import it in your dart file:
 
 ```dart
-// NotifiableList
-import 'package:notifiable_iterables/notifiable_list.dart';
-
-// NotifiableSet
-import 'package:notifiable_iterables/notifiable_set.dart';
-
-// NotifiableMap
-import 'package:notifiable_iterables/notifiable_Map.dart';
+import 'package:notifiable_iterables/notifiable_iterables.dart';
 ```
 
 Then, you can use the following classes:
@@ -86,4 +79,6 @@ list[3] = 4; // Notify the listeners
 
 ## License
 
-This project is under the MIT License. Please see the [LICENSE.txt](https://github.com/Cynnexis/notifiable_iterables/blob/master/LICENSE.txt) file for more detail (it's a really fascinating story written in there!)
+This project is under the BSD License. Please see the
+[LICENSE.txt](https://github.com/Cynnexis/notifiable_iterables/blob/master/LICENSE.txt) file for
+more detail (it's a really fascinating story written in there!)

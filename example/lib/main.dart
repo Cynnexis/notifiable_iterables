@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:notifiable_iterables/notifiable_list.dart';
+import 'package:notifiable_iterables/notifiable_iterables.dart';
 import 'package:provider/provider.dart';
 
 void main() {

@@ -1,6 +1,6 @@
 DCK_CMP_UP=docker-compose up -d --remove-orphans
 
-.PHONY: build-docker docker-test docker-down docker-kill lint fix-lint test doc
+.PHONY: build-docker docker-test docker-lint docker-doc docker-publish docker-down docker-kill lint fix-lint test doc rmdoc publish publish-n
 
 build-docker:
 	docker build -t cynnexis/notifiableiterables .
@@ -13,6 +13,9 @@ docker-lint:
 
 docker-doc:
 	docker run --rm -it -v "$$(pwd):/build" cynnexis/notifiableiterables doc
+
+docker-publish:
+	docker run --rm -it -v "$$(pwd):/build" cynnexis/notifiableiterables publish
 
 docker-down:
 	docker-compose down --remove-orphans --volumes
@@ -31,4 +34,13 @@ test:
 
 doc:
 	./docker-entrypoint.sh doc
+
+rmdoc:
+	./docker-entrypoint.sh rmdoc
+
+publish:
+	./docker-entrypoint.sh publish
+
+publish-n:
+	./docker-entrypoint.sh publish --dry-run
 

@@ -1,6 +1,4 @@
-import 'package:notifiable_iterables/notifiable_list.dart';
-import 'package:notifiable_iterables/notifiable_set.dart';
-import 'package:notifiable_iterables/notifiable_map.dart';
+import 'package:notifiable_iterables/notifiable_iterables.dart';
 import 'package:test/test.dart';
 
 Matcher isTrue = equals(true);

@@ -1,7 +1,9 @@
 dartdoc:
   showUndocumentedCategories: true
-  ignored:
+  ignore:
     - missing-from-search-index
     - unresolved-export
-  quiet: true
+    - unknown-file
   allowNonLocalWarnings: false
+  linkTo:
+    url: https://github.com/Cynnexis/notifiable_iterables

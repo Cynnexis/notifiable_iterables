@@ -9,6 +9,16 @@ function print_help() {
 	echo "  test     - Run the tests."
 }
 
+function rmdoc() {
+	echo "Removing documentation..."
+	rm -rf doc/api
+	exit_code=$?
+	if [[ $exit_code -ne 0 ]]; then
+		echo "Could not remove the documentation."
+	fi
+	return $exit_code
+}
+
 if [[ $# == 0 ]]; then
 	echo "An argument must be given."
 	print_help
@@ -29,9 +39,25 @@ elif [[ $1 == "test" ]]; then
 	flutter -v test --no-color --coverage test/*_test.dart
 	exit_code=$?
 elif [[ $1 == "doc" ]]; then
-	echo "Generating documentation..."
-	dartdocgen --include-private --introduction=README.md .
+	rmdoc
 	exit_code=$?
+	if [[ $exit_code -ne 0 ]]; then
+		exit $exit_code
+	fi
+	echo "Generating documentation..."
+	dartdoc --show-progress --exclude dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart,dart:ffi,dart:html,dart:js,dart:ui,dart:js_util
+	exit_code=$?
+elif [[ $1 == "rmdoc" ]]; then
+	rmdoc
+elif [[ $1 == "publish" ]]; then
+	echo "Publishing app..."
+	if [[ $2 == "-n" || $2 == "--dry-run" ]]; then
+		pub publish --dry-run
+		exit_code=$?
+	else
+		pub publish
+		exit_code=$?
+	fi
 else
 	echo "\"$1\" is not a valid command."
 	print_help

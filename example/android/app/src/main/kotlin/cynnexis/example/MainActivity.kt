@@ -1,4 +1,4 @@
-package berger.example
+package cynnexis.example
 
 import io.flutter.embedding.android.FlutterActivity
 
