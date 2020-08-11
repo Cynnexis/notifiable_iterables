@@ -10,22 +10,11 @@ Provides iterables that implements the [`ChangeNotifier`](https://api.flutter.de
 
 ### Installation
 
-This package is not on [pub.dev](https://pub.dev/) yet.
+### Pub
 
-If you want to install it locally on your machine, follow the following steps:
+It is recommended to install this package via `pub`.
 
-1. Clone this project wherever you want on your computer:
-    ```bash
-   git clone https://github.com/Cynnexis/notifiable_iterables.git 
-   ```
-2. In your flutter project, add the following snippet in your `pubspec.yaml`:
-    ```yaml
-   dependencies:
-     notifiable_iterables:
-       path: path/to/notifiable_iterables
-   ```
-   If you have problems at the step, please check the [`pubspec.yaml` of the example](https://github.com/Cynnexis/notifiable_iterables/blob/master/example/pubspec.yaml).
-3. Open a terminal in your flutter project directory, and enter `pub get`.
+To install this package in your project, open the `pubspec.yaml`, see [this section](https://pub.dev/packages/notifiable_iterables/install).
 
 ### Running the Example
 
@@ -48,6 +37,8 @@ flutter run
 ```
 
 ## Usage
+
+The full documentation is available [here](https://pub.dev/documentation/notifiable_iterables/latest/).
 
 To use this library, you need to import it in your dart file:
 
