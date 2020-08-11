@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  test:
+    container_name: notifiable-iterables-test
+    image: cynnexis/notifiableiterables
+    volumes:
+      - "./lib:/build/lib"
+      - "./coverage:/build/coverage"
+      - "./android:/build/android"
+      - "./ios:/build/ios"
+      - "./assets:/build/assets"
+      - "./test:/build/test"
+    command: test
+
+  lint:
+    container_name: notifiable-iterables-lint
+    image: cynnexis/notifiableiterables
+    volumes:
+      - "./lib:/build/lib"
+      - "./test:/build/test"
+      - "./test_driver:/build/test_driver"
+    command: lint
+
+  doc:
+    container_name: notifiable-iterables-doc
+    image: cynnexis/notifiableiterables
+    volumes:
+      - "./:/build/"
+    command: doc

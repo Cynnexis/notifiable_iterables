@@ -1,0 +1,28 @@
+name: Notifiable Iterables CI/CD
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+    name: Check that the Dart source code is correctly formatted.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run dartfmt
+        id: yapf
+        uses: docker://google/dart:2.8.4
+        with:
+          args: dartfmt -n --set-exit-if-changed -l 120 .
+
+  test:
+    runs-on: ubuntu-18.04
+    name: Test the project.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test App
+        uses: ./
+        id: notifiable-iterables_test
+        with:
+          args: "test"

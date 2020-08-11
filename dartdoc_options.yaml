@@ -1,0 +1,7 @@
+dartdoc:
+  showUndocumentedCategories: true
+  ignored:
+    - missing-from-search-index
+    - unresolved-export
+  quiet: true
+  allowNonLocalWarnings: false
