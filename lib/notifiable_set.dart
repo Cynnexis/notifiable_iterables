@@ -62,7 +62,6 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   @override
   bool add(E element) {
-    if (element == null) throw "element cannot be null";
     bool result = _values.add(element);
     if (result) notifyListeners();
     return result;
@@ -72,6 +71,40 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   void addAll(Iterable<E> elements) {
     _values.addAll(elements);
     notifyListeners();
+  }
+
+  /// Insert [element] in the set at [index].
+  ///
+  /// If [element] is already in the set, `false` is returned. Otherwise, `true` is returned.
+  bool insert(int index, E element) {
+    // If the element is already in the set, stop here
+    if (_values.contains(element)) return false;
+
+    // Store all elements from index 0 (included) to [index] (not included).
+    Set<E> prefix = Set<E>();
+    for (int i = 0; i < index; i++) prefix.add(_values.elementAt(i));
+
+    // Store all elements from [index] (included) to the end (included too)
+    Set<E> suffix = Set<E>();
+    for (int i = index; i < _values.length; i++) suffix.add(_values.elementAt(i));
+
+    // prefix = [0, 1, 2, ..., index-1]
+    // suffix = [index, index+1, ..., length-1]
+
+    // Remove all elements
+    _values.clear();
+
+    // Add the prefix
+    _values.addAll(prefix);
+    // Add the infix ([element])
+    _values.add(element);
+    // Add the suffix
+    _values.addAll(suffix);
+
+    // Notify the listeners
+    notifyListeners();
+
+    return true;
   }
 
   @override

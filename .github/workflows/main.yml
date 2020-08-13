@@ -39,6 +39,7 @@ jobs:
     runs-on: ubuntu-18.04
     name: Create a release
     needs: [lint, test]
+    if: github.event_name == 'push' && github.base_ref == 'master' || contains(github.ref, 'cicd/')
     steps:
       - name: Create a release for notifiable_iterables
         id: create_release

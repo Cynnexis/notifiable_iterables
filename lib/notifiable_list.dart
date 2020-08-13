@@ -91,7 +91,6 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   @override
   void add(E element) {
-    if (element == null) throw "element cannot be null";
     _values.add(element);
     notifyListeners();
   }
