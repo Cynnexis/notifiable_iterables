@@ -4,6 +4,8 @@
 
 Provides iterables that implements the [`ChangeNotifier`](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html) class.
 
+**pub.dev:** https://pub.dev/packages/notifiable_iterables
+
 **GitHub:** https://github.com/Cynnexis/notifiable_iterables
 
 ## Getting Started
