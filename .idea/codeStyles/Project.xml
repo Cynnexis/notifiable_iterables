@@ -6,9 +6,6 @@
         <option name="TAB_SIZE" value="2" />
       </value>
     </option>
-    <codeStyleSettings language="Dart">
-      <option name="RIGHT_MARGIN" value="120" />
-    </codeStyleSettings>
     <codeStyleSettings language="Shell Script">
       <indentOptions>
         <option name="INDENT_SIZE" value="4" />
