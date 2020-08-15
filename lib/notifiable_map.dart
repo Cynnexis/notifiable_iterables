@@ -52,7 +52,8 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
   //endregion
 
   @override
-  NotifiableMap<RK, RV> cast<RK, RV>() => NotifiableMap<RK, RV>.of(_values.cast<RK, RV>());
+  NotifiableMap<RK, RV> cast<RK, RV>() =>
+      NotifiableMap<RK, RV>.of(_values.cast<RK, RV>());
 
   @override
   bool containsValue(Object value) => _values.containsValue(value);
@@ -61,7 +62,8 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
   bool containsKey(Object key) => _values.containsKey(key);
 
   @override
-  NotifiableMap<RK, RV> map<RK, RV>(MapEntry<RK, RV> f(K key, V value)) => NotifiableMap<RK, RV>.of(_values.map(f));
+  NotifiableMap<RK, RV> map<RK, RV>(MapEntry<RK, RV> f(K key, V value)) =>
+      NotifiableMap<RK, RV>.of(_values.map(f));
 
   @override
   void addEntries(Iterable<MapEntry<K, V>> newEntries) {
@@ -144,7 +146,10 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is NotifiableMap && runtimeType == other.runtimeType && _values == other._values;
+      identical(this, other) ||
+      other is NotifiableMap &&
+          runtimeType == other.runtimeType &&
+          _values == other._values;
 
   @override
   int get hashCode => _values.hashCode;

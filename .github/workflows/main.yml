@@ -21,7 +21,7 @@ jobs:
         id: yapf
         uses: docker://google/dart:2.8.4
         with:
-          args: dartfmt -n --set-exit-if-changed -l 120 .
+          args: dartfmt -n --set-exit-if-changed .
 
   test:
     runs-on: ubuntu-18.04

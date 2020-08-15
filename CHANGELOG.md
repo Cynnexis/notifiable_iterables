@@ -1,3 +1,8 @@
+# 1.0.2 - 15/08/2020
+
+* Updated dependencies
+* Fixed the `dartfmt` line length limit to 80 (default value) instead of 120 characters.
+
 # 1.0.1 - 13/08/2020
 
 * Added the `insert` method for `NotifiableSet`.

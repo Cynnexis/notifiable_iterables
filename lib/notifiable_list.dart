@@ -83,7 +83,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   /// Create a [NotifiableList] by adding all elements from [elements], regardless of their type.
   @override
-  NotifiableList.from(Iterable<dynamic> elements, {bool growable: true}) : super() {
+  NotifiableList.from(Iterable<dynamic> elements, {bool growable: true})
+      : super() {
     _values = List<E>.from(elements, growable: growable);
   }
 
@@ -224,13 +225,16 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   bool every(bool Function(E element) test) => _values.every(test);
 
   @override
-  Iterable<T> expand<T>(Iterable<T> Function(E element) f) => _values.expand<T>(f);
+  Iterable<T> expand<T>(Iterable<T> Function(E element) f) =>
+      _values.expand<T>(f);
 
   @override
-  E firstWhere(bool Function(E element) test, {E Function() orElse}) => _values.firstWhere(test, orElse: orElse);
+  E firstWhere(bool Function(E element) test, {E Function() orElse}) =>
+      _values.firstWhere(test, orElse: orElse);
 
   @override
-  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) => _values.fold<T>(initialValue, combine);
+  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) =>
+      _values.fold<T>(initialValue, combine);
 
   @override
   Iterable<E> followedBy(Iterable<E> other) => _values.followedBy(other);
@@ -239,7 +243,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   String join([String separator = ""]) => _values.join(separator);
 
   @override
-  E lastWhere(bool Function(E element) test, {E Function() orElse}) => _values.lastWhere(test, orElse: orElse);
+  E lastWhere(bool Function(E element) test, {E Function() orElse}) =>
+      _values.lastWhere(test, orElse: orElse);
 
   @override
   Iterable<T> map<T>(T Function(E e) f) => _values.map<T>(f);
@@ -248,7 +253,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   E reduce(E Function(E value, E element) combine) => _values.reduce(combine);
 
   @override
-  E singleWhere(bool Function(E element) test, {E Function() orElse}) => _values.singleWhere(test, orElse: orElse);
+  E singleWhere(bool Function(E element) test, {E Function() orElse}) =>
+      _values.singleWhere(test, orElse: orElse);
 
   @override
   Iterable<E> skip(int count) => _values.skip(count);
@@ -266,7 +272,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   List<E> toList({bool growable = true}) => _values.toList(growable: growable);
 
   /// Create a [NotifiableList] containing the same elements as this list.
-  NotifiableList<E> toNotifiableList({bool growable = true}) => NotifiableList.of(_values, growable: growable);
+  NotifiableList<E> toNotifiableList({bool growable = true}) =>
+      NotifiableList.of(_values, growable: growable);
 
   @override
   Iterable<E> where(bool Function(E element) test) => _values.where(test);
@@ -287,13 +294,16 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   List<E> sublist(int start, [int end]) => _values.sublist(start, end);
 
   @override
-  int lastIndexOf(E element, [int start]) => _values.lastIndexOf(element, start);
+  int lastIndexOf(E element, [int start]) =>
+      _values.lastIndexOf(element, start);
 
   @override
-  int lastIndexWhere(bool test(E element), [int start]) => _values.lastIndexWhere(test, start);
+  int lastIndexWhere(bool test(E element), [int start]) =>
+      _values.lastIndexWhere(test, start);
 
   @override
-  int indexWhere(bool test(E element), [int start = 0]) => _values.indexWhere(test, start);
+  int indexWhere(bool test(E element), [int start = 0]) =>
+      _values.indexWhere(test, start);
 
   @override
   int indexOf(E element, [int start = 0]) => _values.indexOf(element, start);
@@ -306,7 +316,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   //region OPERATORS
 
   @override
-  NotifiableList<E> operator +(List<E> other) => NotifiableList<E>.of(_values + other);
+  NotifiableList<E> operator +(List<E> other) =>
+      NotifiableList<E>.of(_values + other);
 
   @override
   E operator [](int index) => _values[index];
@@ -321,7 +332,10 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is NotifiableList && runtimeType == other.runtimeType && _values == other._values;
+      identical(this, other) ||
+      other is NotifiableList &&
+          runtimeType == other.runtimeType &&
+          _values == other._values;
 
   //endregion
 }

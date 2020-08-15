@@ -48,14 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     // Launch the fibonacci stream.
     fibonacciStream = fibonacci(interval: Duration(seconds: 1));
-    fibonacciStreamSubscription = fibonacciStream.listen(onFibonacciNumberIsComputed);
+    fibonacciStreamSubscription =
+        fibonacciStream.listen(onFibonacciNumberIsComputed);
   }
 
   /// Callback for the fibonacci stream.
   ///
   /// It add the newly computed fibonacci number to the [NotifiableList]. The list then notify the UI.
   void onFibonacciNumberIsComputed(BigInt fibonacciNumber) {
-    Provider.of<NotifiableList<BigInt>>(context, listen: false).add(fibonacciNumber);
+    Provider.of<NotifiableList<BigInt>>(context, listen: false)
+        .add(fibonacciNumber);
   }
 
   @override
@@ -76,10 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.replay),
             onPressed: () => setState(() {
               fibonacciStreamSubscription.cancel();
-              Provider.of<NotifiableList<BigInt>>(context, listen: false).clear();
+              Provider.of<NotifiableList<BigInt>>(context, listen: false)
+                  .clear();
               fibonacciStream = fibonacci(interval: Duration(seconds: 1));
               fibonacciStreamSubscription = fibonacciStream.listen((event) {
-                Provider.of<NotifiableList<BigInt>>(context, listen: false).add(event);
+                Provider.of<NotifiableList<BigInt>>(context, listen: false)
+                    .add(event);
               });
             }),
           ),
@@ -89,7 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
           preferredSize: Size(double.infinity, 6.0),
           child: LinearProgressIndicator(
             backgroundColor: Colors.lightBlueAccent.withOpacity(0.3),
-            valueColor: new AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
+            valueColor:
+                new AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
             value: fibonacciStreamSubscription.isPaused ? 0.0 : null,
           ),
         ),
@@ -128,8 +133,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       // Button to pause and resume the stream
       floatingActionButton: FloatingActionButton(
-        child: Icon(fibonacciStreamSubscription.isPaused ? Icons.play_arrow : Icons.pause),
-        tooltip: fibonacciStreamSubscription.isPaused ? "Resume the computation" : "Pause the computation",
+        child: Icon(fibonacciStreamSubscription.isPaused
+            ? Icons.play_arrow
+            : Icons.pause),
+        tooltip: fibonacciStreamSubscription.isPaused
+            ? "Resume the computation"
+            : "Pause the computation",
         onPressed: () => setState(() => fibonacciStreamSubscription.isPaused
             ? fibonacciStreamSubscription.resume()
             : fibonacciStreamSubscription.pause()),

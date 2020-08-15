@@ -86,7 +86,8 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
     // Store all elements from [index] (included) to the end (included too)
     Set<E> suffix = Set<E>();
-    for (int i = index; i < _values.length; i++) suffix.add(_values.elementAt(i));
+    for (int i = index; i < _values.length; i++)
+      suffix.add(_values.elementAt(i));
 
     // prefix = [0, 1, 2, ..., index-1]
     // suffix = [index, index+1, ..., length-1]
@@ -200,13 +201,16 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   bool every(bool Function(E element) test) => _values.every(test);
 
   @override
-  Iterable<T> expand<T>(Iterable<T> Function(E element) f) => _values.expand<T>(f);
+  Iterable<T> expand<T>(Iterable<T> Function(E element) f) =>
+      _values.expand<T>(f);
 
   @override
-  E firstWhere(bool Function(E element) test, {E Function() orElse}) => _values.firstWhere(test, orElse: orElse);
+  E firstWhere(bool Function(E element) test, {E Function() orElse}) =>
+      _values.firstWhere(test, orElse: orElse);
 
   @override
-  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) => _values.fold<T>(initialValue, combine);
+  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) =>
+      _values.fold<T>(initialValue, combine);
 
   @override
   Iterable<E> followedBy(Iterable<E> other) => _values.followedBy(other);
@@ -215,16 +219,19 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   String join([String separator = ""]) => _values.join(separator);
 
   @override
-  E lastWhere(bool Function(E element) test, {E Function() orElse}) => _values.lastWhere(test, orElse: orElse);
+  E lastWhere(bool Function(E element) test, {E Function() orElse}) =>
+      _values.lastWhere(test, orElse: orElse);
 
   @override
-  NotifiableSet<T> map<T>(T Function(E e) f) => NotifiableSet<T>.of(_values.map<T>(f));
+  NotifiableSet<T> map<T>(T Function(E e) f) =>
+      NotifiableSet<T>.of(_values.map<T>(f));
 
   @override
   E reduce(E Function(E value, E element) combine) => _values.reduce(combine);
 
   @override
-  E singleWhere(bool Function(E element) test, {E Function() orElse}) => _values.singleWhere(test, orElse: orElse);
+  E singleWhere(bool Function(E element) test, {E Function() orElse}) =>
+      _values.singleWhere(test, orElse: orElse);
 
   @override
   Iterable<E> skip(int count) => _values.skip(count);
@@ -242,7 +249,8 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   List<E> toList({bool growable = true}) => _values.toList(growable: growable);
 
   /// Create a [NotifiableList] containing the same elements as this set.
-  NotifiableList<E> toNotifiableList({bool growable = true}) => NotifiableList.of(_values, growable: growable);
+  NotifiableList<E> toNotifiableList({bool growable = true}) =>
+      NotifiableList.of(_values, growable: growable);
 
   @override
   Iterable<E> where(bool Function(E element) test) => _values.where(test);
@@ -262,13 +270,16 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   NotifiableMap<int, E> asNotifiableMap() => NotifiableMap<int, E>.of(asMap());
 
   @override
-  NotifiableSet<E> difference(Set<Object> other) => NotifiableSet<E>.of(_values.difference(other));
+  NotifiableSet<E> difference(Set<Object> other) =>
+      NotifiableSet<E>.of(_values.difference(other));
 
   @override
-  NotifiableSet<E> union(Set<E> other) => NotifiableSet<E>.of(_values.union(other));
+  NotifiableSet<E> union(Set<E> other) =>
+      NotifiableSet<E>.of(_values.union(other));
 
   @override
-  NotifiableSet<E> intersection(Set<Object> other) => NotifiableSet<E>.of(_values.intersection(other));
+  NotifiableSet<E> intersection(Set<Object> other) =>
+      NotifiableSet<E>.of(_values.intersection(other));
 
   @override
   bool containsAll(Iterable<Object> other) => _values.containsAll(other);
@@ -291,7 +302,8 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   /// Search for [element] starting from [start] and return its index.
   ///
   /// If the element does not exist, `-1` is returned.
-  int indexOf(E element, [int start = 0]) => indexWhere((value) => element == value, start);
+  int indexOf(E element, [int start = 0]) =>
+      indexWhere((value) => element == value, start);
 
   @override
   NotifiableSet<R> cast<R>() => NotifiableSet<R>.of(_values.cast<R>());
@@ -315,7 +327,10 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is NotifiableSet && runtimeType == other.runtimeType && _values == other._values;
+      identical(this, other) ||
+      other is NotifiableSet &&
+          runtimeType == other.runtimeType &&
+          _values == other._values;
 
   //endregion
 }
