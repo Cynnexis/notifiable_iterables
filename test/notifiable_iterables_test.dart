@@ -11,7 +11,19 @@ void main() {
   NotifiableMap<int, String> map1;
 
   setUp(() {
-    originalList = <String>['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', "10"];
+    originalList = <String>[
+      '0',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      "10"
+    ];
     list1 = NotifiableList<String>.of(originalList);
     set1 = NotifiableSet<String>.of(originalList);
     map1 = NotifiableMap<int, String>.of(originalList.asMap());
