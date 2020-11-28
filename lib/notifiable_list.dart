@@ -140,6 +140,11 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   //endregion
 
+  /// Callback used for the children when [propagateNotification] is `true`.
+  void _propagate() {
+    if (_propagateNotification) notifyListeners();
+  }
+
   /// Add the [notifyListeners] method as a listener callback to all children.
   ///
   /// Only the children that are not null and that extends [ChangeNotifier] are
@@ -148,7 +153,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     for (E element in _values) {
       // Listen to the element if it is possible
       if (element != null && element is ChangeNotifier) {
-        element.addListener(notifyListeners);
+        element.addListener(_propagate);
       }
     }
   }
@@ -162,7 +167,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
       // Stop listening to the element if possible
       if (element != null && element is ChangeNotifier) {
         try {
-          element.removeListener(notifyListeners);
+          element.removeListener(_propagate);
         } on AssertionError {}
       }
     }
@@ -174,7 +179,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     if (_propagateNotification &&
         element != null &&
         element is ChangeNotifier) {
-      element.addListener(notifyListeners);
+      element.addListener(_propagate);
     }
 
     _values.add(element);
@@ -190,7 +195,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
-        element.addListener(notifyListeners);
+        element.addListener(_propagate);
       }
 
       // Add the element to the list
@@ -220,7 +225,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     if (_propagateNotification &&
         E != null &&
         E is ChangeNotifier &&
-        _values.contains(E)) E.removeListener(notifyListeners);
+        _values.contains(E)) E.removeListener(_propagate);
 
     bool result = _values.remove(E);
     if (result) notifyListeners();
@@ -268,7 +273,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
-        element.removeListener(notifyListeners);
+        element.removeListener(_propagate);
       }
     }
 
@@ -287,7 +292,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     E last = _values.removeLast();
     // Stop listening to child
     if (_propagateNotification && last != null && last is ChangeNotifier)
-      last.removeListener(notifyListeners);
+      last.removeListener(_propagate);
 
     notifyListeners();
     return last;
@@ -298,7 +303,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     E element = _values.removeAt(index);
     // Stop listening to child
     if (_propagateNotification && element != null && element is ChangeNotifier)
-      element.removeListener(notifyListeners);
+      element.removeListener(_propagate);
 
     notifyListeners();
     return element;
@@ -314,7 +319,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
-        element.addListener(notifyListeners);
+        element.addListener(_propagate);
       }
     }
 
@@ -324,7 +329,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
-        element.addListener(notifyListeners);
+        element.addListener(_propagate);
       }
     }
 
@@ -340,7 +345,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
     if (_propagateNotification &&
         element != null &&
         element is ChangeNotifier) {
-      element.addListener(notifyListeners);
+      element.addListener(_propagate);
     }
 
     _values.insert(index, element);
@@ -356,7 +361,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
-        element.addListener(notifyListeners);
+        element.addListener(_propagate);
       }
     }
 
@@ -495,6 +500,14 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   @override
   void operator []=(int index, E value) {
     if (_values[index] != value) {
+      // Add/remove listener callback
+      if (_propagateNotification) {
+        if (_values[index] != null && _values[index] is ChangeNotifier)
+          (_values[index] as ChangeNotifier).removeListener(_propagate);
+
+        if (value != null && value is ChangeNotifier)
+          value.addListener(_propagate);
+      }
       _values[index] = value;
       notifyListeners();
     }

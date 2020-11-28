@@ -1,6 +1,6 @@
 DCK_CMP_UP=docker-compose up -d --remove-orphans
 
-.PHONY: all help build-docker docker-test docker-lint docker-doc docker-publish docker-down docker-kill lint fix-lint test doc rmdoc publish publish-n
+.PHONY: all help configure-git configure build-docker docker-test docker-lint docker-doc docker-publish docker-down docker-kill lint fix-lint test doc rmdoc publish publish-n
 
 all: help
 
@@ -11,6 +11,8 @@ help:
 	@echo ''
 	@echo "The available commands are:"
 	@echo ''
+	@echo "  configure         - Configure the project folder."
+	@echo "  configure-git     - Configure the project folder for git usage. Use 'configure' for global configuration of the project."
 	@echo "  build-docker   - Build the Docker image associated to this project. All command starting with 'docker-' needs this docker image to work."
 	@echo "  docker-test    - Launch the tests from a container."
 	@echo "  docker-lint    - Check the code format from a container."
@@ -25,6 +27,18 @@ help:
 	@echo "  rmdoc          - Remove the documentation."
 	@echo "  publish        - Publish the flutter package."
 	@echo "  publish-n      - Publish the flutter package with the '--dry-run' option (for testing)."
+
+.git/hooks/pre-commit:
+	curl -fsSL "https://gist.githubusercontent.com/Cynnexis/16b64199d9a94684a638f08b3fc893d3/raw/pre-commit" -o ".git/hooks/pre-commit"
+	@if command -v "dos2unix" > /dev/null 2>&1; then \
+		dos2unix ".git/hooks/pre-commit"; \
+	else \
+		echo "dos2unix not found. If you are on Windows, you may consider installing it."; \
+	fi
+
+configure-git: .git/hooks/pre-commit
+
+configure: configure-git
 
 build-docker:
 	docker build -t cynnexis/notifiableiterables .
