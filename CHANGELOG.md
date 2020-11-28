@@ -1,3 +1,8 @@
+# 1.1.0 - 28/11/2020
+
+* Notifiable lists and sets now listen to their children, and propagate their notification to the iterable listeners.
+* Updated dependencies
+
 # 1.0.2 - 15/08/2020
 
 * Updated dependencies

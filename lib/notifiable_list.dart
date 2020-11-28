@@ -15,7 +15,38 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   /// attribute.
   List<E> _values;
 
+  /// The boolean that indicates if the notification from its children should
+  /// propagate.
+  ///
+  /// When it is `true` (default value), this [NotifiableList] will notify all
+  /// its listeners when a child notify its listeners as well.
+  bool _propagateNotification = true;
+
   //region PROPERTIES
+
+  /// The boolean that indicates if the notification from its children should
+  /// propagate.
+  ///
+  /// When it is `true` (default value), this [NotifiableList] will notify all
+  /// its listeners when a child notify its listeners as well.
+  bool get propagateNotification => _propagateNotification;
+
+  /// The boolean that indicates if the notification from its children should
+  /// propagate.
+  ///
+  /// When it is `true` (default value), this [NotifiableList] will notify all
+  /// its listeners when a child notify its listeners as well.
+  set propagateNotification(bool value) {
+    ArgumentError.checkNotNull(value, "propagateNotification");
+
+    if (_propagateNotification != value) {
+      _propagateNotification = value;
+      if (_propagateNotification)
+        _startPropagateNotification();
+      else
+        _stopPropagateNotification();
+    }
+  }
 
   @override
   int get length => _values.length;
@@ -70,41 +101,116 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   /// Create an empty [NotifiableList].
   ///
-  /// If [length] is not null, it will create a fixed-size list. Otherwise, the list will be expandable.
-  NotifiableList([int length]) : super() {
+  /// If [length] is not null, it will create a fixed-size list. Otherwise, the
+  /// list will be expandable. If [propagateNotification] is `true` (default
+  /// value), this [NotifiableList] will notify all its listeners when a child
+  /// notify its listeners as well.
+  NotifiableList({int length, propagateNotification = true}) : super() {
     _values = length == null ? List<E>() : List<E>(length);
+    this.propagateNotification = propagateNotification;
   }
 
   /// Create a [NotifiableList] by adding all elements of [elements] of type [E].
+  ///
+  /// If [propagateNotification] is `true` (default value), this
+  /// [NotifiableList] will notify all its listeners when a child notify its
+  /// listeners as well.
   @override
-  NotifiableList.of(Iterable<E> elements, {bool growable: true}) : super() {
+  NotifiableList.of(Iterable<E> elements,
+      {bool growable: true, propagateNotification = true})
+      : super() {
     _values = List<E>.of(elements, growable: growable);
+    this.propagateNotification = propagateNotification;
+    if (_propagateNotification) _startPropagateNotification();
   }
 
   /// Create a [NotifiableList] by adding all elements from [elements], regardless of their type.
+  ///
+  /// If [propagateNotification] is `true` (default value), this
+  /// [NotifiableList] will notify all its listeners when a child notify its
+  /// listeners as well.
   @override
-  NotifiableList.from(Iterable<dynamic> elements, {bool growable: true})
+  NotifiableList.from(Iterable<dynamic> elements,
+      {bool growable: true, propagateNotification = true})
       : super() {
     _values = List<E>.from(elements, growable: growable);
+    this.propagateNotification = propagateNotification;
+    if (_propagateNotification) _startPropagateNotification();
   }
 
   //endregion
 
+  /// Callback used for the children when [propagateNotification] is `true`.
+  void _propagate() {
+    if (_propagateNotification) notifyListeners();
+  }
+
+  /// Add the [notifyListeners] method as a listener callback to all children.
+  ///
+  /// Only the children that are not null and that extends [ChangeNotifier] are
+  /// concerned.
+  void _startPropagateNotification() {
+    for (E element in _values) {
+      // Listen to the element if it is possible
+      if (element != null && element is ChangeNotifier) {
+        element.addListener(_propagate);
+      }
+    }
+  }
+
+  /// Remove the [notifyListeners] method from all children.
+  ///
+  /// Only the children that are not null and that extends [ChangeNotifier] are
+  /// concerned.
+  void _stopPropagateNotification() {
+    for (E element in _values) {
+      // Stop listening to the element if possible
+      if (element != null && element is ChangeNotifier) {
+        try {
+          element.removeListener(_propagate);
+        } on AssertionError {}
+      }
+    }
+  }
+
   @override
   void add(E element) {
+    // Listen to the element if asked to and if it is possible
+    if (_propagateNotification &&
+        element != null &&
+        element is ChangeNotifier) {
+      element.addListener(_propagate);
+    }
+
     _values.add(element);
     notifyListeners();
   }
 
   @override
   void addAll(Iterable<E> elements) {
-    _values.addAll(elements);
+    ArgumentError.checkNotNull(elements);
+
+    for (E element in elements) {
+      // Listen to the element if asked to and if it is possible
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.addListener(_propagate);
+      }
+
+      // Add the element to the list
+      _values.add(element);
+    }
+
+    // Notify only once
     notifyListeners();
   }
 
   @override
   void clear() {
     if (length > 0) {
+      // Stop listening to children
+      _stopPropagateNotification();
       _values.clear();
       notifyListeners();
     }
@@ -115,6 +221,12 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   @override
   bool remove(Object E) {
+    // Stop listening to child
+    if (_propagateNotification &&
+        E != null &&
+        E is ChangeNotifier &&
+        _values.contains(E)) E.removeListener(_propagate);
+
     bool result = _values.remove(E);
     if (result) notifyListeners();
 
@@ -153,6 +265,18 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
 
   @override
   void removeRange(int start, int end) {
+    RangeError.checkValidRange(start, end, length, "start", "end");
+
+    // Stop listening to the element that will be replaced
+    for (int i = start; i < end; i++) {
+      E element = elementAt(i);
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.removeListener(_propagate);
+      }
+    }
+
     _values.removeRange(start, end);
     notifyListeners();
   }
@@ -166,6 +290,10 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   @override
   E removeLast() {
     E last = _values.removeLast();
+    // Stop listening to child
+    if (_propagateNotification && last != null && last is ChangeNotifier)
+      last.removeListener(_propagate);
+
     notifyListeners();
     return last;
   }
@@ -173,25 +301,72 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   @override
   E removeAt(int index) {
     E element = _values.removeAt(index);
+    // Stop listening to child
+    if (_propagateNotification && element != null && element is ChangeNotifier)
+      element.removeListener(_propagate);
+
     notifyListeners();
     return element;
   }
 
   @override
   void setAll(int index, Iterable<E> iterable) {
+    RangeError.checkValidRange(index, index + iterable.length, length, "index",
+        "index + iterable.length");
+
+    // Listen to the element that will be added
+    for (E element in iterable) {
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.addListener(_propagate);
+      }
+    }
+
+    // Stop listening to the element that will be replaced
+    for (int i = index; i < index + iterable.length; i++) {
+      E element = elementAt(i);
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.addListener(_propagate);
+      }
+    }
+
     _values.setAll(index, iterable);
     notifyListeners();
   }
 
   @override
-  void insertAll(int index, Iterable<E> iterable) {
-    _values.insertAll(index, iterable);
+  void insert(int index, E element) {
+    RangeError.checkValidIndex(index, _values, "index", length);
+
+    // Listen to the element if asked to and if it is possible
+    if (_propagateNotification &&
+        element != null &&
+        element is ChangeNotifier) {
+      element.addListener(_propagate);
+    }
+
+    _values.insert(index, element);
     notifyListeners();
   }
 
   @override
-  void insert(int index, E element) {
-    _values.insert(index, element);
+  void insertAll(int index, Iterable<E> iterable) {
+    ArgumentError.checkNotNull(iterable);
+
+    for (E element in iterable) {
+      // Listen to the element if asked to and if it is possible
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.addListener(_propagate);
+      }
+    }
+
+    _values.insertAll(index, iterable);
+    // Notify only once
     notifyListeners();
   }
 
@@ -325,6 +500,14 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   @override
   void operator []=(int index, E value) {
     if (_values[index] != value) {
+      // Add/remove listener callback
+      if (_propagateNotification) {
+        if (_values[index] != null && _values[index] is ChangeNotifier)
+          (_values[index] as ChangeNotifier).removeListener(_propagate);
+
+        if (value != null && value is ChangeNotifier)
+          value.addListener(_propagate);
+      }
       _values[index] = value;
       notifyListeners();
     }

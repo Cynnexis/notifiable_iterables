@@ -1,6 +1,6 @@
 name: notifiable_iterables
 description: Provides iterables that implements the ChangeNotifier class.
-version: 1.0.2
+version: 1.1.0
 homepage: https://github.com/Cynnexis/notifiable_iterables
 repository: https://github.com/Cynnexis/notifiable_iterables
 issue_tracker: https://github.com/Cynnexis/notifiable_iterables/issues
@@ -16,7 +16,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  test: '^1.14.4'
-  dartdoc: '^0.32.3'
+  test: 1.16.0-nullsafety.5
+  dartdoc: 0.32.3
 
 flutter:

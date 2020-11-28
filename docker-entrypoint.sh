@@ -36,8 +36,13 @@ elif [[ $1 == *"fix"* && $1 == *"lint"* ]]; then
 	exit_code=$?
 elif [[ $1 == "test" ]]; then
 	echo "Testing app..."
-	flutter -v test --no-color --coverage test/*_test.dart
+	flutter -v test --no-color --coverage
 	exit_code=$?
+	# Generate coverage report
+	if command -v "genhtml"; then
+		lcov -r coverage/lcov.info '*/__test*__/*' -o coverage/lcov_cleaned.info
+		genhtml coverage/lcov_cleaned.info --output=coverage
+	fi
 elif [[ $1 == "doc" ]]; then
 	rmdoc
 	exit_code=$?
