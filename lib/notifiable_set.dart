@@ -13,7 +13,38 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   /// attribute.
   Set<E> _values;
 
+  /// The boolean that indicates if the notification from its children should
+  /// propagate.
+  ///
+  /// When it is `true` (default value), this [NotifiableList] will notify all
+  /// its listeners when a child notify its listeners as well.
+  bool _propagateNotification = true;
+
   //region PROPERTIES
+
+  /// The boolean that indicates if the notification from its children should
+  /// propagate.
+  ///
+  /// When it is `true` (default value), this [NotifiableList] will notify all
+  /// its listeners when a child notify its listeners as well.
+  bool get propagateNotification => _propagateNotification;
+
+  /// The boolean that indicates if the notification from its children should
+  /// propagate.
+  ///
+  /// When it is `true` (default value), this [NotifiableList] will notify all
+  /// its listeners when a child notify its listeners as well.
+  set propagateNotification(bool value) {
+    ArgumentError.checkNotNull(value, "propagateNotification");
+
+    if (_propagateNotification != value) {
+      _propagateNotification = value;
+      if (_propagateNotification)
+        _startPropagateNotification();
+      else
+        _stopPropagateNotification();
+    }
+  }
 
   @override
   int get length => _values.length;
@@ -44,32 +75,105 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   //region CONSTRUCTORS
 
   /// Create an empty [NotifiableSet].
-  NotifiableSet() : super() {
+  ///
+  /// If [propagateNotification] is `true` (default value), this
+  /// [NotifiableList] will notify all its listeners when a child notify its
+  /// listeners as well.
+  NotifiableSet({propagateNotification = true}) : super() {
     _values = Set<E>();
+    this.propagateNotification = propagateNotification;
   }
 
   /// Create a [NotifiableSet] by adding all elements of [elements] of type [E].
-  NotifiableSet.of(Iterable<E> elements) : super() {
+  ///
+  /// If [propagateNotification] is `true` (default value), this
+  /// [NotifiableList] will notify all its listeners when a child notify its
+  /// listeners as well.
+  NotifiableSet.of(Iterable<E> elements, {propagateNotification = true})
+      : super() {
     _values = Set<E>.of(elements);
+    this.propagateNotification = propagateNotification;
+    if (_propagateNotification) _startPropagateNotification();
   }
 
-  /// Create a [NotifiableSet] by adding all elements from [elements], regardless of their type.
-  NotifiableSet.from(Iterable<dynamic> elements) : super() {
+  /// Create a [NotifiableSet] by adding all elements from [elements],
+  /// regardless of their type.
+  ///
+  /// If [propagateNotification] is `true` (default value), this
+  /// [NotifiableList] will notify all its listeners when a child notify its
+  /// listeners as well.
+  NotifiableSet.from(Iterable<dynamic> elements, {propagateNotification = true})
+      : super() {
     _values = Set<E>.from(elements);
+    this.propagateNotification = propagateNotification;
+    if (_propagateNotification) _startPropagateNotification();
   }
 
   //endregion
 
+  /// Add the [notifyListeners] method as a listener callback to all children.
+  ///
+  /// Only the children that are not null and that extends [ChangeNotifier] are
+  /// concerned.
+  void _startPropagateNotification() {
+    for (E element in _values) {
+      // Listen to the element if it is possible
+      if (element != null && element is ChangeNotifier) {
+        element.addListener(notifyListeners);
+      }
+    }
+  }
+
+  /// Remove the [notifyListeners] method from all children.
+  ///
+  /// Only the children that are not null and that extends [ChangeNotifier] are
+  /// concerned.
+  void _stopPropagateNotification() {
+    for (E element in _values) {
+      // Stop listening to the element if possible
+      if (element != null && element is ChangeNotifier) {
+        try {
+          element.removeListener(notifyListeners);
+        } on AssertionError {}
+      }
+    }
+  }
+
   @override
   bool add(E element) {
     bool result = _values.add(element);
-    if (result) notifyListeners();
+
+    if (result) {
+      // Listen to the element if asked to and if it is possible
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.addListener(notifyListeners);
+      }
+
+      notifyListeners();
+    }
+
     return result;
   }
 
   @override
   void addAll(Iterable<E> elements) {
-    _values.addAll(elements);
+    ArgumentError.checkNotNull(elements);
+
+    for (E element in elements) {
+      bool result = _values.add(element);
+
+      // Listen to the element if asked to and if it is possible
+      if (result &&
+          _propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.addListener(notifyListeners);
+      }
+    }
+
+    // Notify only once
     notifyListeners();
   }
 
@@ -98,7 +202,16 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
     // Add the prefix
     _values.addAll(prefix);
     // Add the infix ([element])
-    _values.add(element);
+    bool result = _values.add(element);
+
+    // Listen to the element if asked to and if it is possible
+    if (result &&
+        _propagateNotification &&
+        element != null &&
+        element is ChangeNotifier) {
+      element.addListener(notifyListeners);
+    }
+
     // Add the suffix
     _values.addAll(suffix);
 
@@ -111,6 +224,8 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   @override
   void clear() {
     if (length > 0) {
+      // Stop listening to children
+      _stopPropagateNotification();
       _values.clear();
       notifyListeners();
     }
@@ -121,6 +236,12 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   @override
   bool remove(Object E) {
+    // Stop listening to child
+    if (_propagateNotification &&
+        E != null &&
+        E is ChangeNotifier &&
+        _values.contains(E)) E.removeListener(notifyListeners);
+
     bool result = _values.remove(E);
     if (result) notifyListeners();
 
@@ -153,6 +274,15 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
 
   @override
   void removeAll(Iterable<Object> elements) {
+    // Stop listening to the element that will be replaced
+    for (E element in elements) {
+      if (_propagateNotification &&
+          element != null &&
+          element is ChangeNotifier) {
+        element.removeListener(notifyListeners);
+      }
+    }
+
     _values.removeAll(elements);
     notifyListeners();
   }
@@ -163,6 +293,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   E update(int index, E newValue) {
     E oldValue = elementAt(index);
     replace(elementAt(index), newValue);
+    notifyListeners();
     return oldValue;
   }
 
@@ -174,6 +305,16 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
     _values = Set<E>.of(_values.map<E>((E e) {
       if (e == oldValue) {
         found = true;
+        if (_propagateNotification &&
+            oldValue != null &&
+            oldValue is ChangeNotifier) {
+          oldValue.removeListener(notifyListeners);
+        }
+        if (_propagateNotification &&
+            newValue != null &&
+            newValue is ChangeNotifier) {
+          newValue.addListener(notifyListeners);
+        }
         return newValue;
       } else {
         return e;
