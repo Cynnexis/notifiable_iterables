@@ -7,9 +7,9 @@ Matcher isFalse = equals(false);
 
 void main() {
   List<String> originalList;
-  NotifiableList<String> list1;
-  NotifiableSet<String> set1;
-  NotifiableMap<int, String> map1;
+  late NotifiableList<String> list1;
+  late NotifiableSet<String> set1;
+  late NotifiableMap<int, String> map1;
 
   setUp(() {
     originalList = <String>[
@@ -34,14 +34,14 @@ void main() {
     test("Notifier", () => testNotifier(list1, "list1"));
     test("Propagation",
         () => testPropagation(NotifiableList<ValueNotifier<String>>()));
-    test("Nullity", () => testNullity(set1));
+    test("Nullity", () => testNullity(list1.cast<String?>()));
   });
 
   group("Notifiable Set", () {
     test("Notifier", () => testNotifier(set1, "set1"));
     test("Propagation",
         () => testPropagation(NotifiableSet<ValueNotifier<String>>()));
-    test("Nullity", () => testNullity(set1));
+    test("Nullity", () => testNullity(set1.cast<String?>()));
 
     test("Insert", () async {
       set1.insert(2, "1.5");
@@ -63,12 +63,11 @@ void main() {
 
   group("Notifiable Map", () {
     test("Notifier", () => testNotifier(map1, "map1"));
-    test("Nullity", () => testNullity(map1));
+    test("Nullity", () => testNullity(map1.cast<int?, String?>()));
   });
 }
 
 void testNotifier(dynamic iterable, [String name = "iterable"]) {
-  assert(name != null);
   bool changed = false;
 
   void Function() onChanged = () => changed = true;
