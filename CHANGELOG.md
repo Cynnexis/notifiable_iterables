@@ -1,3 +1,10 @@
+# 1.1.0-nullsafety.0 - 28/11/2020
+
+![beta](https://img.shields.io/badge/-beta-orange)
+
+* Null-safety version with Dart SDK >=2.12.0.
+* Updated dependencies
+
 # 1.1.0 - 28/11/2020
 
 * Notifiable lists and sets now listen to their children, and propagate their notification to the iterable listeners.
