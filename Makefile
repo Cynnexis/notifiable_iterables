@@ -1,6 +1,6 @@
 DCK_CMP_UP=docker-compose up -d --remove-orphans
 
-.PHONY: all help configure-git configure build-docker docker-test docker-lint docker-doc docker-publish docker-down docker-kill lint fix-lint test doc rmdoc publish publish-n
+.PHONY: all help configure-git configure clean build-docker docker-test docker-lint docker-doc docker-publish docker-down docker-kill lint fix-lint test doc rmdoc publish publish-n
 
 all: help
 
@@ -11,8 +11,9 @@ help:
 	@echo ''
 	@echo "The available commands are:"
 	@echo ''
-	@echo "  configure         - Configure the project folder."
-	@echo "  configure-git     - Configure the project folder for git usage. Use 'configure' for global configuration of the project."
+	@echo "  help           - Print this help text and exit."
+	@echo "  configure      - Configure the project folder."
+	@echo "  configure-git  - Configure the project folder for git usage. Use 'configure' for global configuration of the project."
 	@echo "  build-docker   - Build the Docker image associated to this project. All command starting with 'docker-' needs this docker image to work."
 	@echo "  docker-test    - Launch the tests from a container."
 	@echo "  docker-lint    - Check the code format from a container."
@@ -39,6 +40,12 @@ help:
 configure-git: .git/hooks/pre-commit
 
 configure: configure-git
+	flutter pub get
+
+clean:
+	flutter clean
+	rm -rf coverage
+	rm -f .coverage
 
 build-docker:
 	docker build -t cynnexis/notifiableiterables .
