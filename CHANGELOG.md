@@ -1,3 +1,9 @@
+# 1.1.0 - 16/08/2021
+
+* Null-safety version with Dart SDK >=2.12.0 in real release.
+* Null-safety Flutter example.
+* Updated dependencies
+
 # 1.1.0-nullsafety.0 - 28/11/2020
 
 ![beta](https://img.shields.io/badge/-beta-orange)

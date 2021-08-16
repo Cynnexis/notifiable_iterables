@@ -8,11 +8,11 @@ Provides iterables that implements the [`ChangeNotifier`](https://api.flutter.de
 
 **GitHub:** https://github.com/Cynnexis/notifiable_iterables
 
-## Getting Started
+**API Documentation:** https://cynnexis.github.io/notifiable_iterables/
 
-### Installation
+## :electric_plug: Getting Started
 
-### Pub
+### :hammer_and_pick: Installation
 
 It is recommended to install this package via `pub`.
 
@@ -38,7 +38,7 @@ flutter devices
 flutter run
 ```
 
-## Usage
+## :dart: Usage
 
 The full documentation is available [here](https://pub.dev/documentation/notifiable_iterables/latest/).
 
@@ -70,18 +70,29 @@ list.addListener(() => print("New list: $list"));
 list[3] = 4; // Notify the listeners, the console will show the updated list
 ```
 
-## Build With
+## :building_construction: Build With
 
 * [Dart](https://dart.dev/)
 * [Flutter](https://flutter.dev/)
 * [Android Studio](https://developer.android.com/studio)
 
-## Author
+## :handshake: Contributing
 
-* **Valentin Berger ([Cynnexis](https://github.com/Cynnexis)):** developer
+To contribute to this project, please read our [`CONTRIBUTING.md`][contributing] file.
 
-## License
+We also have a [code of conduct][code-of-conduct] to help create a welcoming and friendly
+environment.
 
-This project is under the BSD License. Please see the
-[LICENSE.txt](https://github.com/Cynnexis/notifiable_iterables/blob/master/LICENSE.txt) file for
-more detail (it's a really fascinating story written in there!)
+## :writing_hand: Authors
+
+Please see the [`CONTRIBUTORS.md`][contributors] file.
+
+## :page_facing_up: License
+
+This project is under the BSD License. Please see the [LICENSE.txt][license] file for more detail
+(it's a really fascinating story written in there!)
+
+[contributing]: CONTRIBUTING.md
+[contributors]: CONTRIBUTORS.md
+[code-of-conduct]: CODE_OF_CONDUCT.md
+[license]: LICENSE
