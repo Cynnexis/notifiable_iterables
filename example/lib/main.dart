@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:notifiable_iterables/notifiable_iterables.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -38,10 +39,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /// Variable holding the fibonacci stream
-  Stream<BigInt> fibonacciStream;
+  late Stream<BigInt> fibonacciStream;
 
   /// Variable holding the subscription to the fibonacci stream. It can control the stream by pausing it or resuming it.
-  StreamSubscription<BigInt> fibonacciStreamSubscription;
+  late StreamSubscription<BigInt> fibonacciStreamSubscription;
 
   @override
   void initState() {
@@ -93,8 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           preferredSize: Size(double.infinity, 6.0),
           child: LinearProgressIndicator(
             backgroundColor: Colors.lightBlueAccent.withOpacity(0.3),
-            valueColor:
-                new AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
             value: fibonacciStreamSubscription.isPaused ? 0.0 : null,
           ),
         ),
@@ -152,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
 /// This functions computes the first [n] fibonacci numbers. If [n] is not given, it will never stop. This function
 /// yields every new results through a stream of [BigInt]. If [interval] is given, a delay will be respected between
 /// two computation.
-Stream<BigInt> fibonacci({int n, Duration interval}) async* {
+Stream<BigInt> fibonacci({int? n, Duration? interval}) async* {
   BigInt a = BigInt.from(0);
   BigInt b = BigInt.from(1);
 
@@ -162,7 +162,7 @@ Stream<BigInt> fibonacci({int n, Duration interval}) async* {
   if (interval != null) await Future.delayed(interval);
 
   int counter = 0;
-  while (n == null || (n != null && counter < n)) {
+  while (n == null || counter < n) {
     BigInt c = BigInt.parse(a.toString());
     a = b;
     b = c + b;

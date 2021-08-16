@@ -1,4 +1,4 @@
-FROM cirrusci/flutter:1.22.4
+FROM cirrusci/flutter:2.4.0-4.2.pre
 
 USER root
 ENV DEBIAN_FRONTEND noninteractive
@@ -15,12 +15,8 @@ RUN apt-get update && \
 	# Some files on Windows use CRLF newlines. It is incompatible with UNIX.
 	dos2unix docker-entrypoint.sh && chmod a+x docker-entrypoint.sh && \
 	# Update flutter project dependencies
-	which flutter && \
-	flutter channel stable && \
-	flutter upgrade && \
 	flutter doctor --no-color && \
 	flutter --version && \
-	flutter clean && \
 	flutter pub get
 
 # Update the PATH env variable
