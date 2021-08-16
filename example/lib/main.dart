@@ -93,8 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
           preferredSize: Size(double.infinity, 6.0),
           child: LinearProgressIndicator(
             backgroundColor: Colors.lightBlueAccent.withOpacity(0.3),
-            valueColor:
-                new AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
             value: fibonacciStreamSubscription.isPaused ? 0.0 : null,
           ),
         ),

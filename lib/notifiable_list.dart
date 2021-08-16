@@ -114,7 +114,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   /// listeners as well.
   @override
   NotifiableList.of(Iterable<E?> elements,
-      {bool growable: true, propagateNotification = true})
+      {bool growable = true, propagateNotification = true})
       : super() {
     _values = List<E?>.of(elements, growable: growable);
     this.propagateNotification = propagateNotification;
@@ -128,7 +128,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   /// listeners as well.
   @override
   NotifiableList.from(Iterable<dynamic> elements,
-      {bool growable: true, propagateNotification = true})
+      {bool growable = true, propagateNotification = true})
       : super() {
     _values = List<E?>.from(elements, growable: growable);
     this.propagateNotification = propagateNotification;

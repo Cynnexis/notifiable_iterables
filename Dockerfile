@@ -15,12 +15,8 @@ RUN apt-get update && \
 	# Some files on Windows use CRLF newlines. It is incompatible with UNIX.
 	dos2unix docker-entrypoint.sh && chmod a+x docker-entrypoint.sh && \
 	# Update flutter project dependencies
-	which flutter && \
-	flutter channel beta && \
-	flutter upgrade && \
 	flutter doctor --no-color && \
 	flutter --version && \
-	flutter clean && \
 	flutter pub get
 
 # Update the PATH env variable
