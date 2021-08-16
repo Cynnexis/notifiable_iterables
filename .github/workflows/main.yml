@@ -10,6 +10,9 @@ on:
       - master
       - 'cicd/**'
 
+env:
+  YQ_VERSION: v4.11.2
+
 jobs:
   lint:
     runs-on: ubuntu-20.04
