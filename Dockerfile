@@ -1,4 +1,4 @@
-FROM cirrusci/flutter:beta
+FROM cirrusci/flutter:2.4.0-4.2.pre
 
 USER root
 ENV DEBIAN_FRONTEND noninteractive

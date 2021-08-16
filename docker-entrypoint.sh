@@ -29,10 +29,10 @@ exit_code=0
 
 if [[ $1 == "lint" ]]; then
 	echo "Checking Dart files format..."
-	dartfmt -n --set-exit-if-changed .
+	flutter format --output=none --set-exit-if-changed .
 	exit_code=$?
 elif [[ $1 == *"fix"* && $1 == *"lint"* ]]; then
-	dartfmt -w .
+	flutter format .
 	exit_code=$?
 elif [[ $1 == "test" ]]; then
 	echo "Testing app..."

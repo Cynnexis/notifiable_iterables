@@ -4,26 +4,58 @@ on:
   pull_request:
     branches:
       - master
-      - beta
       - 'cicd/**'
   push:
     branches:
       - master
-      - beta
       - 'cicd/**'
 
 jobs:
   lint:
-    runs-on: ubuntu-18.04
-    name: Check that the Dart source code is correctly formatted.
+    runs-on: ubuntu-20.04
+    name: Analyze code
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run dartfmt
-        id: yapf
-        uses: docker://google/dart:2.12.0-79.0.dev
+      - uses: actions/setup-java@v1
         with:
-          args: dartfmt -n --set-exit-if-changed .
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "2.4.0-4.2.pre"
+          channel: 'beta'
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Analyze code
+        run: flutter analyze --congratulate --no-pub --preamble --fatal-infos --fatal-warnings
+      - name: Check dart code format
+        run: flutter format --output=none --set-exit-if-changed .
+
+  pages:
+    runs-on: ubuntu-20.04
+    name: Generate GitHub Pages
+    needs: [lint]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "2.4.0-4.2.pre"
+          channel: 'beta'
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Generate documentation
+        run: |
+          flutter pub global activate dartdoc
+          dartdoc --exclude dart:async,dart:collection,dart:convert,dart:core,dart:developer,dart:io,dart:isolate,dart:math,dart:typed_data,dart,dart:ffi,dart:html,dart:js,dart:ui,dart:js_util
+      - name: Deploy GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: doc/api
 
   test:
     runs-on: ubuntu-18.04
@@ -40,17 +72,43 @@ jobs:
   release:
     runs-on: ubuntu-18.04
     name: Create a release
-    needs: [lint, test]
+    needs: [lint, pages, test]
     if: github.event_name == 'push' && (contains(github.ref, 'master') || contains(github.ref, 'beta')) || contains(github.ref, 'cicd/')
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get current app version
+        id: get_current_app_version
+        run: |
+          # Install yq
+          foundArch="$(uname -p)"
+          # List of possible values found here: https://stackoverflow.com/a/45125525/7347145
+          case "$foundArch" in
+            arm|armhf) ARCH='arm' ;;
+            arm64|aarch64|aarch64_be|armv8b|armv8l) ARCH='arm64' ;;
+            mips) ARCH='mips' ;;
+            mips64) ARCH='mips64' ;;
+            ppc64|ppcle|ppc64le) ARCH='ppc64' ;;
+            s390|s390x) ARCH='s390x' ;;
+            x86_64) ARCH='amd64' ;;
+            i386|i686|x86) ARCH='386' ;;
+            *) echo "error: unsupported architecture: $foundArch" >&2; exit 1 ;;
+          esac
+          curl -fsSL https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}.tar.gz | tar xz
+          sudo mv yq_linux_${ARCH} /usr/bin/yq
+          sudo chown root: /usr/bin/yq
+          sudo chmod +x /usr/bin/yq
+          # Get version name
+          app_version=$(yq eval '.version' pubspec.yaml)
+          echo "app_version=app_version" >> $GITHUB_ENV
       - name: Create a release for notifiable_iterables
         id: create_release
         uses: actions/create-release@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
-          release_name: ${{ github.sha }}
+          tag_name: v${{ env.app_version }}
+          release_name: v${{ env.app_version }}
           body: "Ref: ${{ github.ref }} SHA: ${{ github.sha }}"
           draft: true
           prerelease: false
