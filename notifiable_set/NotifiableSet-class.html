@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the NotifiableSet class from the notifiable_set library, for the Dart programming language.">
+  <title>NotifiableSet class - notifiable_set library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">notifiable_iterables</a></li>
+    <li><a href="../notifiable_set/notifiable_set-library.html">notifiable_set</a></li>
+    <li class="self-crumb">NotifiableSet<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span> class</li>
+  </ol>
+  <div class="self-name">NotifiableSet</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-class">NotifiableSet&lt;<wbr><span class="type-parameter">E</span>&gt;</span> class 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Class that mimics <code>Set</code>, and notify its listener every time the set is changed.</p>
+<p>This set will notify its listener when a change is detected (an item has been added, removed, updated, etc... or the
+set has been sorted, mapped, etc...). However, it won't notify its listener if its items are changed, even if they
+extends <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html">ChangeNotifier</a>.</p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        <dt>Inheritance</dt>
+        <dd><ul class="gt-separated dark clazz-relationships">
+          <li>Object</li>
+          <li><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html">ChangeNotifier</a></li>
+          <li>NotifiableSet</li>
+        </ul></dd>
+
+
+
+
+        <dt>Available Extensions</dt>
+        <dd><ul class="comma-separated clazz-relationships">
+          <li><a href="https://pub.dev/documentation/collection/1.15.0/collection/IterableComparableExtension.html">IterableComparableExtension</a></li>
+          <li><a href="https://pub.dev/documentation/collection/1.15.0/collection/IterableExtension.html">IterableExtension</a></li>
+          <li><a href="https://pub.dev/documentation/collection/1.15.0/collection/IterableNullableExtension.html">IterableNullableExtension</a></li>
+        </ul></dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="constructors">
+      <h2>Constructors</h2>
+
+      <dl class="constructor-summary-list">
+        <dt id="NotifiableSet" class="callable">
+          <span class="name"><a href="../notifiable_set/NotifiableSet/NotifiableSet.html">NotifiableSet</a></span><span class="signature">(<span class="parameter" id="-param-propagateNotification">{<span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span>)</span>
+        </dt>
+        <dd>
+          Create an empty <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a>. <a href="../notifiable_set/NotifiableSet/NotifiableSet.html">[...]</a>
+        </dd>
+        <dt id="NotifiableSet.from" class="callable">
+          <span class="name"><a href="../notifiable_set/NotifiableSet/NotifiableSet.from.html">NotifiableSet.from</a></span><span class="signature">(<span class="parameter" id="from-param-elements"><span class="type-annotation">Iterable</span> <span class="parameter-name">elements</span>, </span><span class="parameter" id="from-param-propagateNotification">{<span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span>)</span>
+        </dt>
+        <dd>
+          Create a <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a> by adding all elements from <code>elements</code>,
+regardless of their type. <a href="../notifiable_set/NotifiableSet/NotifiableSet.from.html">[...]</a>
+        </dd>
+        <dt id="NotifiableSet.of" class="callable">
+          <span class="name"><a href="../notifiable_set/NotifiableSet/NotifiableSet.of.html">NotifiableSet.of</a></span><span class="signature">(<span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span><span class="parameter" id="of-param-propagateNotification">{<span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span>)</span>
+        </dt>
+        <dd>
+          Create a <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a> by adding all elements of <code>elements</code> of type <code>E</code>. <a href="../notifiable_set/NotifiableSet/NotifiableSet.of.html">[...]</a>
+        </dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="first" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/first.html">first</a></span>
+  <span class="signature">&#8594; E?</span> 
+
+</dt>
+<dd>
+  Returns the first element. <a href="../notifiable_set/NotifiableSet/first.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="hashCode" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; int</span> 
+
+</dt>
+<dd>
+  The hash code for this object. <a href="../notifiable_set/NotifiableSet/hashCode.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="hasListeners" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/hasListeners.html">hasListeners</a></span>
+  <span class="signature">&#8594; bool</span> 
+
+</dt>
+<dd class="inherited">
+  Whether any listeners are currently registered. <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/hasListeners.html">[...]</a>
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/protected-constant.html">protected</a>, read-only, inherited</div>
+
+</dd>
+
+        <dt id="isEmpty" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/isEmpty.html">isEmpty</a></span>
+  <span class="signature">&#8594; bool</span> 
+
+</dt>
+<dd>
+  Returns <code>true</code> if there are no elements in this collection. <a href="../notifiable_set/NotifiableSet/isEmpty.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="isNotEmpty" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/isNotEmpty.html">isNotEmpty</a></span>
+  <span class="signature">&#8594; bool</span> 
+
+</dt>
+<dd>
+  Returns true if there is at least one element in this collection. <a href="../notifiable_set/NotifiableSet/isNotEmpty.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="iterator" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/iterator.html">iterator</a></span>
+  <span class="signature">&#8594; Iterator<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  An iterator that iterates over the elements of this set. <a href="../notifiable_set/NotifiableSet/iterator.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="last" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/last.html">last</a></span>
+  <span class="signature">&#8594; E?</span> 
+
+</dt>
+<dd>
+  Returns the last element. <a href="../notifiable_set/NotifiableSet/last.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="length" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/length.html">length</a></span>
+  <span class="signature">&#8594; int</span> 
+
+</dt>
+<dd>
+  Returns the number of elements in the iterable. <a href="../notifiable_set/NotifiableSet/length.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+        <dt id="propagateNotification" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/propagateNotification.html">propagateNotification</a></span>
+  <span class="signature">&#8596; bool</span> 
+
+</dt>
+<dd>
+  The boolean that indicates if the notification from its children should
+propagate. <a href="../notifiable_set/NotifiableSet/propagateNotification.html">[...]</a>
+  <div class="features">read / write</div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/Listenable/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; Type</span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object. 
+  <div class="features">read-only, inherited</div>
+
+</dd>
+
+        <dt id="single" class="property">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/single.html">single</a></span>
+  <span class="signature">&#8594; E?</span> 
+
+</dt>
+<dd>
+  Checks that this iterable has only one element, and returns that element. <a href="../notifiable_set/NotifiableSet/single.html">[...]</a>
+  <div class="features">read-only</div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-methods">
+      <h2>Methods</h2>
+      <dl class="callables">
+        <dt id="add" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/add.html">add</a></span><span class="signature">(<wbr><span class="parameter" id="add-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Adds <code>value</code> to the set. <a href="../notifiable_set/NotifiableSet/add.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="addAll" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/addAll.html">addAll</a></span><span class="signature">(<wbr><span class="parameter" id="addAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Adds all <code>elements</code> to this set. <a href="../notifiable_set/NotifiableSet/addAll.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="addListener" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/addListener.html">addListener</a></span><span class="signature">(<wbr><span class="parameter" id="addListener-param-listener"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/VoidCallback.html">VoidCallback</a></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Register a closure to be called when the object changes. <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/addListener.html">[...]</a>
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="any" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/any.html">any</a></span><span class="signature">(<wbr><span class="parameter" id="any-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks whether any element of this iterable satisfies <code>test</code>. <a href="../notifiable_set/NotifiableSet/any.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="asMap" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/asMap.html">asMap</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return a <code>Map</code> where the keys are the indices and the values the elements of this set. 
+  
+
+</dd>
+
+        <dt id="asNotifiableMap" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/asNotifiableMap.html">asNotifiableMap</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_map/NotifiableMap-class.html">NotifiableMap</a><span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return a <a href="../notifiable_map/NotifiableMap-class.html">NotifiableMap</a> where the keys are the indices and the values the elements of this set. 
+  
+
+</dd>
+
+        <dt id="cast" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/cast.html">cast</a></span><span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">R</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Provides a view of this set as a set of <code>R</code> instances. <a href="../notifiable_set/NotifiableSet/cast.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="clear" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/clear.html">clear</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Removes all elements from the set. 
+  
+
+</dd>
+
+        <dt id="contains" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/contains.html">contains</a></span><span class="signature">(<wbr><span class="parameter" id="contains-param-E"><span class="type-annotation">Object?</span> <span class="parameter-name">E</span></span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Whether <code>value</code> is in the set. 
+  
+
+</dd>
+
+        <dt id="containsAll" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/containsAll.html">containsAll</a></span><span class="signature">(<wbr><span class="parameter" id="containsAll-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Object?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Whether this set contains all the elements of <code>other</code>. 
+  
+
+</dd>
+
+        <dt id="difference" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/difference.html">difference</a></span><span class="signature">(<wbr><span class="parameter" id="difference-param-other"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">Object?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a new set with the elements of this that are not in <code>other</code>. <a href="../notifiable_set/NotifiableSet/difference.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="dispose" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/dispose.html">dispose</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Discards any resources used by the object. After this is called, the
+object is not in a usable state and should be discarded (calls to
+<a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/addListener.html">addListener</a> and <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/removeListener.html">removeListener</a> will throw after the object is
+disposed). <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/dispose.html">[...]</a>
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/mustCallSuper-constant.html">mustCallSuper</a>, inherited</div>
+
+</dd>
+
+        <dt id="elementAt" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/elementAt.html">elementAt</a></span><span class="signature">(<wbr><span class="parameter" id="elementAt-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the <code>index</code>th element. <a href="../notifiable_set/NotifiableSet/elementAt.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="every" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/every.html">every</a></span><span class="signature">(<wbr><span class="parameter" id="every-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Checks whether every element of this iterable satisfies <code>test</code>. <a href="../notifiable_set/NotifiableSet/every.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="expand" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/expand.html">expand</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="expand-param-f"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Expands each element of this <code>Iterable</code> into zero or more elements. <a href="../notifiable_set/NotifiableSet/expand.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="firstWhere" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/firstWhere.html">firstWhere</a></span><span class="signature">(<wbr><span class="parameter" id="firstWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="firstWhere-param-orElse">{<span class="type-annotation">E?</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the first element that satisfies the given predicate <code>test</code>. <a href="../notifiable_set/NotifiableSet/firstWhere.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="fold" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/fold.html">fold</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="fold-param-initialValue"><span class="type-annotation">T</span> <span class="parameter-name">initialValue</span>, </span><span class="parameter" id="fold-param-combine"><span class="type-annotation">T</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-previousValue"><span class="type-annotation">T</span> <span class="parameter-name">previousValue</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Reduces a collection to a single value by iteratively combining each
+element of the collection with an existing value <a href="../notifiable_set/NotifiableSet/fold.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="followedBy" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/followedBy.html">followedBy</a></span><span class="signature">(<wbr><span class="parameter" id="followedBy-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the lazy concatenation of this iterable and <code>other</code>. <a href="../notifiable_set/NotifiableSet/followedBy.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="forEach" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/forEach.html">forEach</a></span><span class="signature">(<wbr><span class="parameter" id="forEach-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Invokes <code>action</code> on each element of this iterable in iteration order. 
+  
+
+</dd>
+
+        <dt id="indexOf" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/indexOf.html">indexOf</a></span><span class="signature">(<wbr><span class="parameter" id="indexOf-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="indexOf-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Search for <code>element</code> starting from <code>start</code> and return its index. <a href="../notifiable_set/NotifiableSet/indexOf.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="indexWhere" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/indexWhere.html">indexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="indexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="indexWhere-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
+    <span class="returntype parameter">&#8594; int</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Iterate over the set and return the first element matching <code>test</code>. <a href="../notifiable_set/NotifiableSet/indexWhere.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="insert" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/insert.html">insert</a></span><span class="signature">(<wbr><span class="parameter" id="insert-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insert-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Insert <code>element</code> in the set at <code>index</code>. <a href="../notifiable_set/NotifiableSet/insert.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="intersection" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/intersection.html">intersection</a></span><span class="signature">(<wbr><span class="parameter" id="intersection-param-other"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">Object?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a new set which is the intersection between this set and <code>other</code>. <a href="../notifiable_set/NotifiableSet/intersection.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="join" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/join.html">join</a></span><span class="signature">(<wbr><span class="parameter" id="join-param-separator">[<span class="type-annotation">String</span> <span class="parameter-name">separator</span> = <span class="default-value">&quot;&quot;</span>]</span>)
+    <span class="returntype parameter">&#8594; String</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts each element to a <code>String</code> and concatenates the strings. <a href="../notifiable_set/NotifiableSet/join.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="lastWhere" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/lastWhere.html">lastWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastWhere-param-orElse">{<span class="type-annotation">E?</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the last element that satisfies the given predicate <code>test</code>. <a href="../notifiable_set/NotifiableSet/lastWhere.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="lookup" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/lookup.html">lookup</a></span><span class="signature">(<wbr><span class="parameter" id="lookup-param-object"><span class="type-annotation">Object?</span> <span class="parameter-name">object</span></span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  If an object equal to <code>object</code> is in the set, return it. <a href="../notifiable_set/NotifiableSet/lookup.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="map" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/map.html">map</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="map-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-e"><span class="type-annotation">E?</span> <span class="parameter-name">e</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  The current elements of this iterable modified by <code>toElement</code>. <a href="../notifiable_set/NotifiableSet/map.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/Listenable/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation">Invocation</span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a non-existent method or property is accessed. <a href="https://api.flutter.dev/flutter/foundation/Listenable/noSuchMethod.html">[...]</a>
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="notifyListeners" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/notifyListeners.html">notifyListeners</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Call all the registered listeners. <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/notifyListeners.html">[...]</a>
+  <div class="features">@<a href="https://pub.dev/documentation/meta/1.7.0/meta/protected-constant.html">protected</a>, @<a href="https://pub.dev/documentation/meta/1.7.0/meta/visibleForTesting-constant.html">visibleForTesting</a>, inherited</div>
+
+</dd>
+
+        <dt id="reduce" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/reduce.html">reduce</a></span><span class="signature">(<wbr><span class="parameter" id="reduce-param-combine"><span class="type-annotation">E?</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Reduces a collection to a single value by iteratively combining elements
+of the collection using the provided function. <a href="../notifiable_set/NotifiableSet/reduce.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="remove" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/remove.html">remove</a></span><span class="signature">(<wbr><span class="parameter" id="remove-param-E"><span class="type-annotation">Object?</span> <span class="parameter-name">E</span></span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Removes <code>value</code> from the set. <a href="../notifiable_set/NotifiableSet/remove.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="removeAll" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/removeAll.html">removeAll</a></span><span class="signature">(<wbr><span class="parameter" id="removeAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Object?</span>&gt;</span></span> <span class="parameter-name">elements</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Removes each element of <code>elements</code> from this set. 
+  
+
+</dd>
+
+        <dt id="removeListener" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/removeListener.html">removeListener</a></span><span class="signature">(<wbr><span class="parameter" id="removeListener-param-listener"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/VoidCallback.html">VoidCallback</a></span> <span class="parameter-name">listener</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Remove a previously registered closure from the list of closures that are
+notified when the object changes. <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/removeListener.html">[...]</a>
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="removeWhere" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/removeWhere.html">removeWhere</a></span><span class="signature">(<wbr><span class="parameter" id="removeWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Removes all elements of this set that satisfy <code>test</code>. 
+  
+
+</dd>
+
+        <dt id="replace" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/replace.html">replace</a></span><span class="signature">(<wbr><span class="parameter" id="replace-param-oldValue"><span class="type-annotation">E?</span> <span class="parameter-name">oldValue</span>, </span><span class="parameter" id="replace-param-newValue"><span class="type-annotation">E?</span> <span class="parameter-name">newValue</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Replace the <code>oldValue</code> with <code>newValue</code> if found. <a href="../notifiable_set/NotifiableSet/replace.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="retainAll" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/retainAll.html">retainAll</a></span><span class="signature">(<wbr><span class="parameter" id="retainAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">Object?</span>&gt;</span></span> <span class="parameter-name">elements</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Removes all elements of this set that are not elements in <code>elements</code>. <a href="../notifiable_set/NotifiableSet/retainAll.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="retainWhere" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/retainWhere.html">retainWhere</a></span><span class="signature">(<wbr><span class="parameter" id="retainWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Removes all elements of this set that fail to satisfy <code>test</code>. 
+  
+
+</dd>
+
+        <dt id="singleWhere" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/singleWhere.html">singleWhere</a></span><span class="signature">(<wbr><span class="parameter" id="singleWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="singleWhere-param-orElse">{<span class="type-annotation">E?</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the single element that satisfies <code>test</code>. <a href="../notifiable_set/NotifiableSet/singleWhere.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="skip" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/skip.html">skip</a></span><span class="signature">(<wbr><span class="parameter" id="skip-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns an <code>Iterable</code> that provides all but the first <code>count</code> elements. <a href="../notifiable_set/NotifiableSet/skip.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="skipWhile" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/skipWhile.html">skipWhile</a></span><span class="signature">(<wbr><span class="parameter" id="skipWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns an <code>Iterable</code> that skips leading elements while <code>test</code> is satisfied. <a href="../notifiable_set/NotifiableSet/skipWhile.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="take" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/take.html">take</a></span><span class="signature">(<wbr><span class="parameter" id="take-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a lazy iterable of the <code>count</code> first elements of this iterable. <a href="../notifiable_set/NotifiableSet/take.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="takeWhile" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/takeWhile.html">takeWhile</a></span><span class="signature">(<wbr><span class="parameter" id="takeWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a lazy iterable of the leading elements satisfying <code>test</code>. <a href="../notifiable_set/NotifiableSet/takeWhile.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="toList" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/toList.html">toList</a></span><span class="signature">(<wbr><span class="parameter" id="toList-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>}</span>)
+    <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a <code>List</code> containing the elements of this <code>Iterable</code>. <a href="../notifiable_set/NotifiableSet/toList.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="toNotifiableList" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/toNotifiableList.html">toNotifiableList</a></span><span class="signature">(<wbr><span class="parameter" id="toNotifiableList-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Create a <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a> containing the same elements as this set. 
+  
+
+</dd>
+
+        <dt id="toNotifiableSet" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/toNotifiableSet.html">toNotifiableSet</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a> containing the same elements as this set. 
+  
+
+</dd>
+
+        <dt id="toSet" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/toSet.html">toSet</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a <code>Set</code> with the same elements and behavior as this <code>Set</code>. <a href="../notifiable_set/NotifiableSet/toSet.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/Listenable/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; String</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object. <a href="https://api.flutter.dev/flutter/foundation/Listenable/toString.html">[...]</a>
+  <div class="features">inherited</div>
+
+</dd>
+
+        <dt id="union" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/union.html">union</a></span><span class="signature">(<wbr><span class="parameter" id="union-param-other"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a new set which contains all the elements of this set and <code>other</code>. <a href="../notifiable_set/NotifiableSet/union.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="update" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/update.html">update</a></span><span class="signature">(<wbr><span class="parameter" id="update-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="update-param-newValue"><span class="type-annotation">E?</span> <span class="parameter-name">newValue</span></span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Set the element at <code>index</code> to <code>newValue</code>. <a href="../notifiable_set/NotifiableSet/update.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="where" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a new lazy <code>Iterable</code> with all elements that satisfy the
+predicate <code>test</code>. <a href="../notifiable_set/NotifiableSet/where.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="whereType" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/whereType.html">whereType</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns a new lazy <code>Iterable</code> with all elements that have type <code>T</code>. <a href="../notifiable_set/NotifiableSet/whereType.html">[...]</a>
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="operators">
+      <h2>Operators</h2>
+      <dl class="callables">
+        <dt id="operator +" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/operator_plus.html">operator +</a></span><span class="signature">(<wbr><span class="parameter" id="+-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a new <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a> that contains the elements of this set and the elements of <code>other</code> in that order. 
+  
+
+</dd>
+
+        <dt id="operator ==" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">Object</span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; bool</span>
+  </span>
+  
+
+</dt>
+<dd>
+  The equality operator. <a href="../notifiable_set/NotifiableSet/operator_equals.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="operator []" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/operator_get.html">operator []</a></span><span class="signature">(<wbr><span class="parameter" id="[]-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>)
+    <span class="returntype parameter">&#8594; E?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the element at <code>index</code>. 
+  
+
+</dd>
+
+        <dt id="operator []=" class="callable">
+  <span class="name"><a href="../notifiable_set/NotifiableSet/operator_put.html">operator []=</a></span><span class="signature">(<wbr><span class="parameter" id="[]=-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="[]=-param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Update the element at <code>index</code> with the new value <code>value</code>. 
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">notifiable_iterables</a></li>
+  <li><a href="../notifiable_set/notifiable_set-library.html">notifiable_set</a></li>
+  <li class="self-crumb">NotifiableSet<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span> class</li>
+</ol>
+
+
+    <h5>notifiable_set library</h5>
+    <ol>
+  <li class="section-title"><a href="../notifiable_set/notifiable_set-library.html#classes">Classes</a></li>
+  <li><a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a></li>
+
+
+
+
+
+
+
+
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <ol>
+
+    <li class="section-title"><a href="../notifiable_set/NotifiableSet-class.html#constructors">Constructors</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/NotifiableSet.html">NotifiableSet</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/NotifiableSet.from.html">from</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/NotifiableSet.of.html">of</a></li>
+
+
+    <li class="section-title">
+      <a href="../notifiable_set/NotifiableSet-class.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../notifiable_set/NotifiableSet/first.html">first</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/hasListeners.html">hasListeners</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/isEmpty.html">isEmpty</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/isNotEmpty.html">isNotEmpty</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/iterator.html">iterator</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/last.html">last</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/length.html">length</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/propagateNotification.html">propagateNotification</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/runtimeType.html">runtimeType</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/single.html">single</a></li>
+
+    <li class="section-title"><a href="../notifiable_set/NotifiableSet-class.html#instance-methods">Methods</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/add.html">add</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/addAll.html">addAll</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/addListener.html">addListener</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/any.html">any</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/asMap.html">asMap</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/asNotifiableMap.html">asNotifiableMap</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/cast.html">cast</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/clear.html">clear</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/contains.html">contains</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/containsAll.html">containsAll</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/difference.html">difference</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/dispose.html">dispose</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/elementAt.html">elementAt</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/every.html">every</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/expand.html">expand</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/firstWhere.html">firstWhere</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/fold.html">fold</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/followedBy.html">followedBy</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/forEach.html">forEach</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/indexOf.html">indexOf</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/indexWhere.html">indexWhere</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/insert.html">insert</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/intersection.html">intersection</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/join.html">join</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/lastWhere.html">lastWhere</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/lookup.html">lookup</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/map.html">map</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/notifyListeners.html">notifyListeners</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/reduce.html">reduce</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/remove.html">remove</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/removeAll.html">removeAll</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/removeListener.html">removeListener</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/removeWhere.html">removeWhere</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/replace.html">replace</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/retainAll.html">retainAll</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/retainWhere.html">retainWhere</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/singleWhere.html">singleWhere</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/skip.html">skip</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/skipWhile.html">skipWhile</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/take.html">take</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/takeWhile.html">takeWhile</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/toList.html">toList</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/toNotifiableList.html">toNotifiableList</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/toNotifiableSet.html">toNotifiableSet</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/toSet.html">toSet</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/toString.html">toString</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/union.html">union</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/update.html">update</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/where.html">where</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/whereType.html">whereType</a></li>
+
+    <li class="section-title"><a href="../notifiable_set/NotifiableSet-class.html#operators">Operators</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/operator_plus.html">operator +</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/operator_equals.html">operator ==</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/operator_get.html">operator []</a></li>
+    <li><a href="../notifiable_set/NotifiableSet/operator_put.html">operator []=</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    notifiable_iterables
+      1.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+

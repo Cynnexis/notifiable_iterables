@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 1.0.2">
+  <meta name="description" content="notifiable_iterables API docs, for the Dart programming language.">
+  <title>notifiable_iterables - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/Cynnexis/notifiable_iterables">notifiable_iterables package</a></li>
+  </ol>
+  <div class="self-name">notifiable_iterables</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="notifiable_iterables">notifiable_iterables</h1>
+<p><img src="https://github.com/Cynnexis/notifiable_iterables/workflows/Notifiable%20Iterables%20CI/CD/badge.svg" alt="Notifiable Iterables CI/CD"> <img src="https://img.shields.io/badge/lang-dart-03599C" alt="language: dart"> <img src="https://img.shields.io/badge/sdk-flutter-45D1FD.svg" alt="sdk: flutter"> <img src="https://img.shields.io/badge/license-BSD-blue.svg" alt="license: BSD"></p>
+<p>Provides iterables that implements the <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html"><code>ChangeNotifier</code></a> class.</p>
+<p><strong>pub.dev:</strong> <a href="https://pub.dev/packages/notifiable_iterables">https://pub.dev/packages/notifiable_iterables</a></p>
+<p><strong>GitHub:</strong> <a href="https://github.com/Cynnexis/notifiable_iterables">https://github.com/Cynnexis/notifiable_iterables</a></p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="installation">Installation</h3>
+<h3 id="pub">Pub</h3>
+<p>It is recommended to install this package via <code>pub</code>.</p>
+<p>To install this package in your project, open the <code>pubspec.yaml</code>, see <a href="https://pub.dev/packages/notifiable_iterables/install">this section</a>.</p>
+<h3 id="running-the-example">Running the Example</h3>
+<p>The <code>example/</code> directory contains an <em>Android Studio</em> project that uses <code>notifiable_iterables</code>.
+To make it run, open the project using <em>Android Studio</em> to launch the configuration <strong>example</strong>.</p>
+<p><img src="https://i.imgur.com/9et70cR.png" alt="Buttons describing the configuration " example"="" on="" android="" studio."=""></p>
+<p>If you don't have <em>Android Studio</em>, please open a terminal in the <code>example</code> project directory, and execute the following lines:</p>
+<pre class="language-bash"><code class="language-bash"># Get the dependencies
+pub get
+
+# Check that a device is connected to this computer
+flutter devices
+
+# Run the example
+flutter run
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>The full documentation is available <a href="https://pub.dev/documentation/notifiable_iterables/latest/">here</a>.</p>
+<p>To use this library, you need to import it in your dart file:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:notifiable_iterables/notifiable_iterables.dart';
+</code></pre>
+<p>Then, you can use the following classes:</p>
+<ol>
+<li><code>NotifiableList&lt;E&gt;</code>: A notifiable list. It has the same functions as <a href="https://api.flutter.dev/flutter/dart-core/List-class.html"><code>List&lt;E&gt;</code></a>.</li>
+<li><code>NotifiableSet&lt;E&gt;</code>: A notifiable set. It has the same functions as <a href="https://api.flutter.dev/flutter/dart-core/Set-class.html"><code>Set&lt;E&gt;</code></a>.</li>
+<li><code>NotifiableMap&lt;K, V&gt;</code>: A notifiable map. It has the same functions as <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html"><code>Map&lt;K, V&gt;</code></a>.</li>
+</ol>
+<p>Those classes can be uses exactly like their iterable equivalent.</p>
+<p><strong>Example:</strong></p>
+<pre class="language-dart"><code class="language-dart">// Create a notifiable list
+NotifiableList&lt;int&gt; list = NotifiableList&lt;int&gt;.of(&lt;int&gt;[0, 1, 2, 3]);
+print(list[2].toString()); // prints "2"
+
+// Add a listener
+list.addListener(() =&gt; print("New list: $list"));
+
+// Change the list
+list[3] = 4; // Notify the listeners, the console will show the updated list
+</code></pre>
+<h2 id="build-with">Build With</h2>
+<ul>
+<li><a href="https://dart.dev/">Dart</a></li>
+<li><a href="https://flutter.dev/">Flutter</a></li>
+<li><a href="https://developer.android.com/studio">Android Studio</a></li>
+</ul>
+<h2 id="author">Author</h2>
+<ul>
+<li><strong>Valentin Berger (<a href="https://github.com/Cynnexis">Cynnexis</a>):</strong> developer</li>
+</ul>
+<h2 id="license">License</h2>
+<p>This project is under the BSD License. Please see the
+<a href="https://github.com/Cynnexis/notifiable_iterables/blob/master/LICENSE.txt">LICENSE.txt</a> file for
+more detail (it's a really fascinating story written in there!)</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="notifiable_iterables">
+  <span class="name"><a href="notifiable_iterables/notifiable_iterables-library.html">notifiable_iterables</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="notifiable_list">
+  <span class="name"><a href="notifiable_list/notifiable_list-library.html">notifiable_list</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="notifiable_map">
+  <span class="name"><a href="notifiable_map/notifiable_map-library.html">notifiable_map</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="notifiable_set">
+  <span class="name"><a href="notifiable_set/notifiable_set-library.html">notifiable_set</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://github.com/Cynnexis/notifiable_iterables">notifiable_iterables package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">notifiable_iterables</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="notifiable_iterables/notifiable_iterables-library.html">notifiable_iterables</a></li>
+      <li><a href="notifiable_list/notifiable_list-library.html">notifiable_list</a></li>
+      <li><a href="notifiable_map/notifiable_map-library.html">notifiable_map</a></li>
+      <li><a href="notifiable_set/notifiable_set-library.html">notifiable_set</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    notifiable_iterables
+      1.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+

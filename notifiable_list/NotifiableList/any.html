@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the any method from the NotifiableList class, for the Dart programming language.">
+  <title>any method - NotifiableList class - notifiable_list library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">notifiable_iterables</a></li>
+    <li><a href="../../notifiable_list/notifiable_list-library.html">notifiable_list</a></li>
+    <li><a href="../../notifiable_list/NotifiableList-class.html">NotifiableList<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+    <li class="self-crumb">any method</li>
+  </ol>
+  <div class="self-name">any</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">any</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@override</li>
+  </ol>
+</div>
+
+<span class="returntype">bool</span>
+<span class="name ">any</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="any-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+</ol>
+)</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Checks whether any element of this iterable satisfies <code>test</code>.</p>
+<p>Checks every element in iteration order, and returns <code>true</code> if
+any of them make <code>test</code> return <code>true</code>, otherwise returns false.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+bool any(bool Function(E? element) test) =&gt; _values.any(test);</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">notifiable_iterables</a></li>
+  <li><a href="../../notifiable_list/notifiable_list-library.html">notifiable_list</a></li>
+  <li><a href="../../notifiable_list/NotifiableList-class.html">NotifiableList<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+  <li class="self-crumb">any method</li>
+</ol>
+
+
+    <h5>NotifiableList class</h5>
+    <ol>
+
+    <li class="section-title"><a href="../../notifiable_list/NotifiableList-class.html#constructors">Constructors</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/NotifiableList.html">NotifiableList</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/NotifiableList.from.html">from</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/NotifiableList.of.html">of</a></li>
+
+
+    <li class="section-title">
+      <a href="../../notifiable_list/NotifiableList-class.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../../notifiable_list/NotifiableList/first.html">first</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/hasListeners.html">hasListeners</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/isEmpty.html">isEmpty</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/isNotEmpty.html">isNotEmpty</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/iterator.html">iterator</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/last.html">last</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/length.html">length</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/propagateNotification.html">propagateNotification</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/reversed.html">reversed</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/single.html">single</a></li>
+
+    <li class="section-title"><a href="../../notifiable_list/NotifiableList-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/add.html">add</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/addAll.html">addAll</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/addListener.html">addListener</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/any.html">any</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/asMap.html">asMap</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/asNotifiableMap.html">asNotifiableMap</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/cast.html">cast</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/clear.html">clear</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/contains.html">contains</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/dispose.html">dispose</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/elementAt.html">elementAt</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/every.html">every</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/expand.html">expand</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/fillRange.html">fillRange</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/firstWhere.html">firstWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/fold.html">fold</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/followedBy.html">followedBy</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/forEach.html">forEach</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/getRange.html">getRange</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/indexOf.html">indexOf</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/indexWhere.html">indexWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/insert.html">insert</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/insertAll.html">insertAll</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/join.html">join</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/lastIndexOf.html">lastIndexOf</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/lastIndexWhere.html">lastIndexWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/lastWhere.html">lastWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/map.html">map</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/notifyListeners.html">notifyListeners</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/reduce.html">reduce</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/remove.html">remove</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/removeAt.html">removeAt</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/removeLast.html">removeLast</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/removeListener.html">removeListener</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/removeRange.html">removeRange</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/removeWhere.html">removeWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/replaceRange.html">replaceRange</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/retainWhere.html">retainWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/setAll.html">setAll</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/setRange.html">setRange</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/shuffle.html">shuffle</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/singleWhere.html">singleWhere</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/skip.html">skip</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/skipWhile.html">skipWhile</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/sort.html">sort</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/sublist.html">sublist</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/take.html">take</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/takeWhile.html">takeWhile</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/toList.html">toList</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/toNotifiableList.html">toNotifiableList</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/toNotifiableSet.html">toNotifiableSet</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/toSet.html">toSet</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/toString.html">toString</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/where.html">where</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/whereType.html">whereType</a></li>
+
+    <li class="section-title"><a href="../../notifiable_list/NotifiableList-class.html#operators">Operators</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/operator_plus.html">operator +</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/operator_equals.html">operator ==</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/operator_get.html">operator []</a></li>
+    <li><a href="../../notifiable_list/NotifiableList/operator_put.html">operator []=</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    notifiable_iterables
+      1.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+

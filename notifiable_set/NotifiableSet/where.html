@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the where method from the NotifiableSet class, for the Dart programming language.">
+  <title>where method - NotifiableSet class - notifiable_set library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">notifiable_iterables</a></li>
+    <li><a href="../../notifiable_set/notifiable_set-library.html">notifiable_set</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet-class.html">NotifiableSet<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+    <li class="self-crumb">where method</li>
+  </ol>
+  <div class="self-name">where</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">where</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<div>
+  <ol class="annotation-list">
+    <li>@override</li>
+  </ol>
+</div>
+
+<span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+<span class="name ">where</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="where-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+</ol>
+)</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Returns a new lazy <code>Iterable</code> with all elements that satisfy the
+predicate <code>test</code>.</p>
+<p>The matching elements have the same order in the returned iterable
+as they have in <a href="../../notifiable_set/NotifiableSet/iterator.html">iterator</a>.</p>
+<p>This method returns a view of the mapped elements.
+As long as the returned <code>Iterable</code> is not iterated over,
+the supplied function <code>test</code> will not be invoked.
+Iterating will not cache results, and thus iterating multiple times over
+the returned <code>Iterable</code> may invoke the supplied
+function <code>test</code> multiple times on the same element.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Iterable&lt;E?&gt; where(bool Function(E? element) test) =&gt; _values.where(test);</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">notifiable_iterables</a></li>
+  <li><a href="../../notifiable_set/notifiable_set-library.html">notifiable_set</a></li>
+  <li><a href="../../notifiable_set/NotifiableSet-class.html">NotifiableSet<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
+  <li class="self-crumb">where method</li>
+</ol>
+
+
+    <h5>NotifiableSet class</h5>
+    <ol>
+
+    <li class="section-title"><a href="../../notifiable_set/NotifiableSet-class.html#constructors">Constructors</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/NotifiableSet.html">NotifiableSet</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/NotifiableSet.from.html">from</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/NotifiableSet.of.html">of</a></li>
+
+
+    <li class="section-title">
+      <a href="../../notifiable_set/NotifiableSet-class.html#instance-properties">Properties</a>
+    </li>
+    <li><a href="../../notifiable_set/NotifiableSet/first.html">first</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/hasListeners.html">hasListeners</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/isEmpty.html">isEmpty</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/isNotEmpty.html">isNotEmpty</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/iterator.html">iterator</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/last.html">last</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/length.html">length</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/propagateNotification.html">propagateNotification</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/single.html">single</a></li>
+
+    <li class="section-title"><a href="../../notifiable_set/NotifiableSet-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/add.html">add</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/addAll.html">addAll</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/addListener.html">addListener</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/any.html">any</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/asMap.html">asMap</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/asNotifiableMap.html">asNotifiableMap</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/cast.html">cast</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/clear.html">clear</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/contains.html">contains</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/containsAll.html">containsAll</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/difference.html">difference</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/dispose.html">dispose</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/elementAt.html">elementAt</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/every.html">every</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/expand.html">expand</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/firstWhere.html">firstWhere</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/fold.html">fold</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/followedBy.html">followedBy</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/forEach.html">forEach</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/indexOf.html">indexOf</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/indexWhere.html">indexWhere</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/insert.html">insert</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/intersection.html">intersection</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/join.html">join</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/lastWhere.html">lastWhere</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/lookup.html">lookup</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/map.html">map</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/notifyListeners.html">notifyListeners</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/reduce.html">reduce</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/remove.html">remove</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/removeAll.html">removeAll</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/removeListener.html">removeListener</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/removeWhere.html">removeWhere</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/replace.html">replace</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/retainAll.html">retainAll</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/retainWhere.html">retainWhere</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/singleWhere.html">singleWhere</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/skip.html">skip</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/skipWhile.html">skipWhile</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/take.html">take</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/takeWhile.html">takeWhile</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/toList.html">toList</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/toNotifiableList.html">toNotifiableList</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/toNotifiableSet.html">toNotifiableSet</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/toSet.html">toSet</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/foundation/Listenable/toString.html">toString</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/union.html">union</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/update.html">update</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/where.html">where</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/whereType.html">whereType</a></li>
+
+    <li class="section-title"><a href="../../notifiable_set/NotifiableSet-class.html#operators">Operators</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/operator_plus.html">operator +</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/operator_equals.html">operator ==</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/operator_get.html">operator []</a></li>
+    <li><a href="../../notifiable_set/NotifiableSet/operator_put.html">operator []=</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    notifiable_iterables
+      1.1.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
