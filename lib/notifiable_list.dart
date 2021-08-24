@@ -10,10 +10,10 @@ import 'notifiable_set.dart';
 /// This list will notify its listener when a change is detected (an item has been added, removed, set, etc... or the
 /// list has been sorted, mapped, etc...). However, it won't notify its listener if its items are changed, even if they
 /// extends [ChangeNotifier].
-class NotifiableList<E> extends ChangeNotifier implements List<E?> {
+class NotifiableList<E> extends ChangeNotifier implements List<E> {
   /// The real list containing the values. Most of the functions in this class just redirect to the functions of this
   /// attribute.
-  late List<E?> _values;
+  late List<E> _values;
 
   /// The boolean that indicates if the notification from its children should
   /// propagate.
@@ -58,19 +58,19 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  E? get first => _values.first;
+  E get first => _values.first;
 
   @override
-  set first(E? value) {
+  set first(E value) {
     _values.first = value;
     notifyListeners();
   }
 
   @override
-  E? get last => _values.last;
+  E get last => _values.last;
 
   @override
-  set last(E? value) {
+  set last(E value) {
     _values.last = value;
     notifyListeners();
   }
@@ -82,13 +82,13 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   bool get isNotEmpty => _values.isNotEmpty;
 
   @override
-  Iterable<E?> get reversed => _values.reversed;
+  Iterable<E> get reversed => _values.reversed;
 
   @override
-  E? get single => _values.single;
+  E get single => _values.single;
 
   @override
-  Iterator<E?> get iterator => _values.iterator;
+  Iterator<E> get iterator => _values.iterator;
 
   @override
   int get hashCode => _values.hashCode;
@@ -103,7 +103,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   /// value), this [NotifiableList] will notify all its listeners when a child
   /// notify its listeners as well.
   NotifiableList({propagateNotification = true}) : super() {
-    _values = <E?>[];
+    _values = <E>[];
     this.propagateNotification = propagateNotification;
   }
 
@@ -113,10 +113,10 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   /// [NotifiableList] will notify all its listeners when a child notify its
   /// listeners as well.
   @override
-  NotifiableList.of(Iterable<E?> elements,
+  NotifiableList.of(Iterable<E> elements,
       {bool growable = true, propagateNotification = true})
       : super() {
-    _values = List<E?>.of(elements, growable: growable);
+    _values = List<E>.of(elements, growable: growable);
     this.propagateNotification = propagateNotification;
     if (_propagateNotification) _startPropagateNotification();
   }
@@ -130,7 +130,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   NotifiableList.from(Iterable<dynamic> elements,
       {bool growable = true, propagateNotification = true})
       : super() {
-    _values = List<E?>.from(elements, growable: growable);
+    _values = List<E>.from(elements, growable: growable);
     this.propagateNotification = propagateNotification;
     if (_propagateNotification) _startPropagateNotification();
   }
@@ -147,7 +147,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   /// Only the children that are not null and that extends [ChangeNotifier] are
   /// concerned.
   void _startPropagateNotification() {
-    for (E? element in _values) {
+    for (E element in _values) {
       // Listen to the element if it is possible
       if (element != null && element is ChangeNotifier) {
         element.addListener(_propagate);
@@ -160,7 +160,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   /// Only the children that are not null and that extends [ChangeNotifier] are
   /// concerned.
   void _stopPropagateNotification() {
-    for (E? element in _values) {
+    for (E element in _values) {
       // Stop listening to the element if possible
       if (element != null && element is ChangeNotifier) {
         try {
@@ -171,7 +171,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void add(E? element) {
+  void add(E element) {
     // Listen to the element if asked to and if it is possible
     if (_propagateNotification &&
         element != null &&
@@ -184,8 +184,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void addAll(Iterable<E?> elements) {
-    for (E? element in elements) {
+  void addAll(Iterable<E> elements) {
+    for (E element in elements) {
       // Listen to the element if asked to and if it is possible
       if (_propagateNotification &&
           element != null &&
@@ -229,25 +229,25 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void forEach(void Function(E? element) f) {
+  void forEach(void Function(E element) f) {
     _values.forEach(f);
     notifyListeners();
   }
 
   @override
-  void retainWhere(bool test(E? element)) {
+  void retainWhere(bool test(E element)) {
     _values.retainWhere(test);
     notifyListeners();
   }
 
   @override
-  void removeWhere(bool test(E? element)) {
+  void removeWhere(bool test(E element)) {
     _values.removeWhere(test);
     notifyListeners();
   }
 
   @override
-  void replaceRange(int start, int end, Iterable<E?> replacement) {
+  void replaceRange(int start, int end, Iterable<E> replacement) {
     _values.replaceRange(start, end, replacement);
     notifyListeners();
   }
@@ -264,7 +264,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
 
     // Stop listening to the element that will be replaced
     for (int i = start; i < end; i++) {
-      E? element = elementAt(i);
+      E element = elementAt(i);
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
@@ -277,15 +277,15 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void setRange(int start, int end, Iterable<E?> iterable,
+  void setRange(int start, int end, Iterable<E> iterable,
       [int skipCount = 0]) {
     _values.setRange(start, end, iterable, skipCount);
     notifyListeners();
   }
 
   @override
-  E? removeLast() {
-    E? last = _values.removeLast();
+  E removeLast() {
+    E last = _values.removeLast();
     // Stop listening to child
     if (_propagateNotification && last != null && last is ChangeNotifier)
       last.removeListener(_propagate);
@@ -295,8 +295,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  E? removeAt(int index) {
-    E? element = _values.removeAt(index);
+  E removeAt(int index) {
+    E element = _values.removeAt(index);
     // Stop listening to child
     if (_propagateNotification && element != null && element is ChangeNotifier)
       element.removeListener(_propagate);
@@ -306,12 +306,12 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void setAll(int index, Iterable<E?> iterable) {
+  void setAll(int index, Iterable<E> iterable) {
     RangeError.checkValidRange(index, index + iterable.length, length, "index",
         "index + iterable.length");
 
     // Listen to the element that will be added
-    for (E? element in iterable) {
+    for (E element in iterable) {
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
@@ -321,7 +321,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
 
     // Stop listening to the element that will be replaced
     for (int i = index; i < index + iterable.length; i++) {
-      E? element = elementAt(i);
+      E element = elementAt(i);
       if (_propagateNotification &&
           element != null &&
           element is ChangeNotifier) {
@@ -334,7 +334,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void insert(int index, E? element) {
+  void insert(int index, E element) {
     RangeError.checkValidIndex(index, _values, "index", length);
 
     // Listen to the element if asked to and if it is possible
@@ -349,8 +349,8 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void insertAll(int index, Iterable<E?> iterable) {
-    for (E? element in iterable) {
+  void insertAll(int index, Iterable<E> iterable) {
+    for (E element in iterable) {
       // Listen to the element if asked to and if it is possible
       if (_propagateNotification &&
           element != null &&
@@ -371,7 +371,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   }
 
   @override
-  void sort([int compare(E? a, E? b)?]) {
+  void sort([int compare(E a, E b)?]) {
     _values.sort(compare);
     notifyListeners();
   }
@@ -379,107 +379,107 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   //region LIST OVERRIDES
 
   @override
-  Set<E?> toSet() => _values.toSet();
+  Set<E> toSet() => _values.toSet();
 
   /// Creates a [NotifiableSet] containing the same elements as this list.
-  NotifiableSet<E?> toNotifiableSet() => NotifiableSet<E?>.of(_values);
+  NotifiableSet<E> toNotifiableSet() => NotifiableSet<E>.of(_values);
 
   @override
-  bool any(bool Function(E? element) test) => _values.any(test);
+  bool any(bool Function(E element) test) => _values.any(test);
 
   @override
-  E? elementAt(int index) => _values.elementAt(index);
+  E elementAt(int index) => _values.elementAt(index);
 
   @override
-  bool every(bool Function(E? element) test) => _values.every(test);
+  bool every(bool Function(E element) test) => _values.every(test);
 
   @override
-  Iterable<T> expand<T>(Iterable<T> Function(E? element) f) =>
+  Iterable<T> expand<T>(Iterable<T> Function(E element) f) =>
       _values.expand<T>(f);
 
   @override
-  E? firstWhere(bool Function(E? element) test, {E? Function()? orElse}) =>
+  E firstWhere(bool Function(E element) test, {E Function()? orElse}) =>
       _values.firstWhere(test, orElse: orElse);
 
   @override
-  T fold<T>(T initialValue, T Function(T previousValue, E? element) combine) =>
+  T fold<T>(T initialValue, T Function(T previousValue, E element) combine) =>
       _values.fold<T>(initialValue, combine);
 
   @override
-  Iterable<E?> followedBy(Iterable<E?> other) => _values.followedBy(other);
+  Iterable<E> followedBy(Iterable<E> other) => _values.followedBy(other);
 
   @override
   String join([String separator = ""]) => _values.join(separator);
 
   @override
-  E? lastWhere(bool Function(E? element) test, {E? Function()? orElse}) =>
+  E lastWhere(bool Function(E element) test, {E Function()? orElse}) =>
       _values.lastWhere(test, orElse: orElse);
 
   @override
-  Iterable<T> map<T>(T Function(E? e) f) => _values.map<T>(f);
+  Iterable<T> map<T>(T Function(E e) f) => _values.map<T>(f);
 
   @override
-  E? reduce(E? Function(E? value, E? element) combine) =>
+  E reduce(E Function(E value, E element) combine) =>
       _values.reduce(combine);
 
   @override
-  E? singleWhere(bool Function(E? element) test, {E? Function()? orElse}) =>
+  E singleWhere(bool Function(E element) test, {E Function()? orElse}) =>
       _values.singleWhere(test, orElse: orElse);
 
   @override
-  Iterable<E?> skip(int count) => _values.skip(count);
+  Iterable<E> skip(int count) => _values.skip(count);
 
   @override
-  Iterable<E?> skipWhile(bool Function(E? value) test) =>
+  Iterable<E> skipWhile(bool Function(E value) test) =>
       _values.skipWhile(test);
 
   @override
-  Iterable<E?> take(int count) => _values.take(count);
+  Iterable<E> take(int count) => _values.take(count);
 
   @override
-  Iterable<E?> takeWhile(bool Function(E? value) test) =>
+  Iterable<E> takeWhile(bool Function(E value) test) =>
       _values.takeWhile(test);
 
   @override
-  List<E?> toList({bool growable = true}) => _values.toList(growable: growable);
+  List<E> toList({bool growable = true}) => _values.toList(growable: growable);
 
   /// Create a [NotifiableList] containing the same elements as this list.
-  NotifiableList<E?> toNotifiableList({bool growable = true}) =>
+  NotifiableList<E> toNotifiableList({bool growable = true}) =>
       NotifiableList.of(_values, growable: growable);
 
   @override
-  Iterable<E?> where(bool Function(E? element) test) => _values.where(test);
+  Iterable<E> where(bool Function(E element) test) => _values.where(test);
 
   @override
   Iterable<T> whereType<T>() => _values.whereType<T>();
 
   @override
-  Map<int, E?> asMap() => _values.asMap();
+  Map<int, E> asMap() => _values.asMap();
 
   /// Return a [NotifiableMap] where the keys are the indices and the values the elements of this list.
-  NotifiableMap<int, E?> asNotifiableMap() =>
-      NotifiableMap<int, E?>.of(asMap());
+  NotifiableMap<int, E> asNotifiableMap() =>
+      NotifiableMap<int, E>.of(asMap());
 
   @override
-  Iterable<E?> getRange(int start, int end) => _values.getRange(start, end);
+  Iterable<E> getRange(int start, int end) => _values.getRange(start, end);
 
   @override
-  List<E?> sublist(int start, [int? end]) => _values.sublist(start, end);
+  List<E> sublist(int start, [int? end]) => _values.sublist(start, end);
 
   @override
-  int lastIndexOf(E? element, [int? start]) =>
+  int lastIndexOf(E element, [int? start]) =>
       _values.lastIndexOf(element, start);
 
   @override
-  int lastIndexWhere(bool test(E? element), [int? start]) =>
+  int lastIndexWhere(bool test(E element), [int? start]) =>
       _values.lastIndexWhere(test, start);
 
   @override
-  int indexWhere(bool test(E? element), [int start = 0]) =>
+  int indexWhere(bool test(E element), [int start = 0]) =>
       _values.indexWhere(test, start);
 
   @override
-  int indexOf(E? element, [int start = 0]) => _values.indexOf(element, start);
+  int indexOf(E element, [int start = 0]) => _values.indexOf(element, start);
 
   @override
   List<R> cast<R>() => _values.cast<R>();
@@ -489,14 +489,14 @@ class NotifiableList<E> extends ChangeNotifier implements List<E?> {
   //region OPERATORS
 
   @override
-  NotifiableList<E?> operator +(List<E?> other) =>
-      NotifiableList<E?>.of(_values + other);
+  NotifiableList<E> operator +(List<E> other) =>
+      NotifiableList<E>.of(_values + other);
 
   @override
-  E? operator [](int index) => _values[index];
+  E operator [](int index) => _values[index];
 
   @override
-  void operator []=(int index, E? value) {
+  void operator []=(int index, E value) {
     if (_values[index] != value) {
       // Add/remove listener callback
       if (_propagateNotification) {

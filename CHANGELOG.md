@@ -1,3 +1,9 @@
+# 1.2.0 - 24/08/2021
+
+* Fixed generic type forced to be nullable (see #13).
+* Updated `Dockerfile`.
+* Upgraded dev dependencies.
+
 # 1.1.1 - 16/08/2021
 
 * Null-safety version with Dart SDK >=2.12.0 in real release.

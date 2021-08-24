@@ -34,14 +34,14 @@ void main() {
     test("Notifier", () => testNotifier(list1, "list1"));
     test("Propagation",
         () => testPropagation(NotifiableList<ValueNotifier<String>>()));
-    test("Nullity", () => testNullity(list1.cast<String?>()));
+    test("Nullity", () => testNullity(NotifiableList<String?>.of(list1)));
   });
 
   group("Notifiable Set", () {
     test("Notifier", () => testNotifier(set1, "set1"));
     test("Propagation",
         () => testPropagation(NotifiableSet<ValueNotifier<String>>()));
-    test("Nullity", () => testNullity(set1.cast<String?>()));
+    test("Nullity", () => testNullity(NotifiableSet<String?>.of(set1)));
 
     test("Insert", () async {
       set1.insert(2, "1.5");
@@ -63,7 +63,7 @@ void main() {
 
   group("Notifiable Map", () {
     test("Notifier", () => testNotifier(map1, "map1"));
-    test("Nullity", () => testNullity(map1.cast<int?, String?>()));
+    test("Nullity", () => testNullity(NotifiableMap<int?, String?>.of(map1)));
   });
 }
 
