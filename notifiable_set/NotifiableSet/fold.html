@@ -60,7 +60,7 @@
 <span class="returntype">T</span>
 <span class="name ">fold</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="fold-param-initialValue"><span class="type-annotation">T</span> <span class="parameter-name">initialValue</span>, </span></li>
 <li><span class="parameter" id="fold-param-combine"><span class="type-annotation">T</span> <span class="parameter-name">combine</span>(<ol class="parameter-list"><li><span class="parameter" id="param-previousValue"><span class="type-annotation">T</span> <span class="parameter-name">previousValue</span>, </span></li>
-<li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<li><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -91,7 +91,7 @@ return value;
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-T fold&lt;T&gt;(T initialValue, T Function(T previousValue, E? element) combine) =&gt;
+T fold&lt;T&gt;(T initialValue, T Function(T previousValue, E element) combine) =&gt;
     _values.fold&lt;T&gt;(initialValue, combine);</code></pre>
 </section>
 
@@ -211,7 +211,7 @@ T fold&lt;T&gt;(T initialValue, T Function(T previousValue, E? element) combine)
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

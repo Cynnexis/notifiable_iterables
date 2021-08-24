@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">addEntries</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addEntries-param-newEntries"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K?</span>, <span class="type-parameter">V?</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">newEntries</span></span></li>
+<span class="name ">addEntries</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addEntries-param-newEntries"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">MapEntry<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">newEntries</span></span></li>
 </ol>)
 
       
@@ -78,7 +78,7 @@ for each <code>MapEntry</code> of the iterable.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void addEntries(Iterable&lt;MapEntry&lt;K?, V?&gt;&gt; newEntries) {
+void addEntries(Iterable&lt;MapEntry&lt;K, V&gt;&gt; newEntries) {
   _values.addEntries(newEntries);
   notifyListeners();
 }</code></pre>
@@ -166,7 +166,7 @@ void addEntries(Iterable&lt;MapEntry&lt;K?, V?&gt;&gt; newEntries) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

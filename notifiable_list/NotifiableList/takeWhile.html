@@ -57,8 +57,8 @@
   </ol>
 </div>
 
-<span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
-<span class="name ">takeWhile</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="takeWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span></li>
+<span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+<span class="name ">takeWhile</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="takeWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -81,8 +81,7 @@ the returned iterable stops (its <code>moveNext()</code> returns false).</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Iterable&lt;E?&gt; takeWhile(bool Function(E? value) test) =&gt;
-    _values.takeWhile(test);</code></pre>
+Iterable&lt;E&gt; takeWhile(bool Function(E value) test) =&gt; _values.takeWhile(test);</code></pre>
 </section>
 
 
@@ -207,7 +206,7 @@ Iterable&lt;E?&gt; takeWhile(bool Function(E? value) test) =&gt;
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

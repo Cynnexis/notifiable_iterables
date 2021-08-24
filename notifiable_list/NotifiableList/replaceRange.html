@@ -60,7 +60,7 @@
 <span class="returntype">void</span>
 <span class="name ">replaceRange</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="replaceRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span></li>
 <li><span class="parameter" id="replaceRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span>, </span></li>
-<li><span class="parameter" id="replaceRange-param-replacement"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">replacement</span></span></li>
+<li><span class="parameter" id="replaceRange-param-replacement"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">replacement</span></span></li>
 </ol>)
 
       
@@ -95,7 +95,7 @@ has the same number of elements as the replaced range. In that case use
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void replaceRange(int start, int end, Iterable&lt;E?&gt; replacement) {
+void replaceRange(int start, int end, Iterable&lt;E&gt; replacement) {
   _values.replaceRange(start, end, replacement);
   notifyListeners();
 }</code></pre>
@@ -223,7 +223,7 @@ void replaceRange(int start, int end, Iterable&lt;E?&gt; replacement) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

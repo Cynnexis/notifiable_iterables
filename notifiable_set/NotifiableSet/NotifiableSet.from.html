@@ -70,7 +70,7 @@ listeners as well.</p>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">NotifiableSet.from(Iterable&lt;dynamic&gt; elements, {propagateNotification = true})
     : super() {
-  _values = Set&lt;E?&gt;.from(elements);
+  _values = Set&lt;E&gt;.from(elements);
   this.propagateNotification = propagateNotification;
   if (_propagateNotification) _startPropagateNotification();
 }</code></pre>
@@ -192,7 +192,7 @@ listeners as well.</p>
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -58,8 +58,8 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">sort</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="sort-param-compare">[<span class="type-annotation">int</span> <span class="parameter-name">compare</span>(<ol class="parameter-list"><li><span class="parameter" id="param-a"><span class="type-annotation">E?</span> <span class="parameter-name">a</span>, </span></li>
-<li><span class="parameter" id="param-b"><span class="type-annotation">E?</span> <span class="parameter-name">b</span></span></li>
+<span class="name ">sort</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="sort-param-compare">[<span class="type-annotation">int</span> <span class="parameter-name">compare</span>(<ol class="parameter-list"><li><span class="parameter" id="compare-param-a"><span class="type-annotation">E</span> <span class="parameter-name">a</span>, </span></li>
+<li><span class="parameter" id="compare-param-b"><span class="type-annotation">E</span> <span class="parameter-name">b</span></span></li>
 </ol>
 )?]</span></li>
 </ol>)
@@ -99,7 +99,7 @@ print(numbers);  // [one, two, four, three] OR [two, one, four, three]
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void sort([int compare(E? a, E? b)?]) {
+void sort([int compare(E a, E b)?]) {
   _values.sort(compare);
   notifyListeners();
 }</code></pre>
@@ -227,7 +227,7 @@ void sort([int compare(E? a, E? b)?]) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

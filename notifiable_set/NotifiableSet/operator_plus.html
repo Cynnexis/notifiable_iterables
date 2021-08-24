@@ -52,8 +52,8 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="../../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
-<span class="name ">operator +</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="+-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
+<span class="returntype"><a href="../../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+<span class="name ">operator +</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="+-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
 </ol>)
 
       
@@ -68,8 +68,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">NotifiableSet&lt;E?&gt; operator +(Iterable&lt;E?&gt; other) {
-  NotifiableSet&lt;E?&gt; newSet = NotifiableSet&lt;E?&gt;.of(_values);
+  <pre class="language-dart"><code class="language-dart">NotifiableSet&lt;E&gt; operator +(Iterable&lt;E&gt; other) {
+  NotifiableSet&lt;E&gt; newSet = NotifiableSet&lt;E&gt;.of(_values);
   newSet.addAll(other);
   return newSet;
 }</code></pre>
@@ -191,7 +191,7 @@
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

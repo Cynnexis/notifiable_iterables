@@ -55,7 +55,7 @@
           <li>@override</li>
         </ol>
       </div>
-      <span class="name ">NotifiableList&lt;<wbr><span class="type-parameter">E</span>&gt;.of</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span></li>
+      <span class="name ">NotifiableList&lt;<wbr><span class="type-parameter">E</span>&gt;.of</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span></li>
 <li><span class="parameter" id="of-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>, </span></li>
 <li><span class="parameter" id="of-param-propagateNotification"><span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span></li>
 </ol>)
@@ -74,10 +74,10 @@ listeners as well.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-NotifiableList.of(Iterable&lt;E?&gt; elements,
+NotifiableList.of(Iterable&lt;E&gt; elements,
     {bool growable = true, propagateNotification = true})
     : super() {
-  _values = List&lt;E?&gt;.of(elements, growable: growable);
+  _values = List&lt;E&gt;.of(elements, growable: growable);
   this.propagateNotification = propagateNotification;
   if (_propagateNotification) _startPropagateNotification();
 }</code></pre>
@@ -205,7 +205,7 @@ NotifiableList.of(Iterable&lt;E?&gt; elements,
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

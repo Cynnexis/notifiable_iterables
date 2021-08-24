@@ -73,6 +73,12 @@ that is not an instance of <code>R</code>, the access will throw instead.</p>
 must be instance of <code>R</code> to be valid arguments to the adding function,
 and they must be instances of <code>E</code> as well to be accepted by
 this set as well.</p>
+<p>Methods like <a href="../../notifiable_set/NotifiableSet/contains.html">contains</a>, <a href="../../notifiable_set/NotifiableSet/remove.html">remove</a> and <a href="../../notifiable_set/NotifiableSet/removeAll.html">removeAll</a>
+which accept one or more <code>Object?</code> as argument,
+will pass the argument directly to the this set's method
+without any checks.
+That means that you can do <code>setOfStrings.cast&lt;int&gt;().remove("a")</code>
+successfully, even if it looks like it shouldn't have any effect.</p>
 </section>
 
 
@@ -199,7 +205,7 @@ Set&lt;R&gt; cast&lt;R&gt;() =&gt; _values.cast&lt;R&gt;();</code></pre>
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

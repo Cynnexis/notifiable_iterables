@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">removeWhere</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="removeWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="name ">removeWhere</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="removeWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="test-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -76,7 +76,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void removeWhere(bool test(E? element)) {
+void removeWhere(bool test(E element)) {
   _values.removeWhere(test);
   notifyListeners();
 }</code></pre>
@@ -198,7 +198,7 @@ void removeWhere(bool test(E? element)) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

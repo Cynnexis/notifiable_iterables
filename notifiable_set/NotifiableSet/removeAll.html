@@ -76,7 +76,7 @@
   <pre class="language-dart"><code class="language-dart">@override
 void removeAll(Iterable&lt;Object?&gt; elements) {
   &#47;&#47; Stop listening to the element that will be replaced
-  for (E? element in elements as Iterable&lt;E?&gt;) {
+  for (E element in elements as Iterable&lt;E&gt;) {
     if (_propagateNotification &amp;&amp;
         element != null &amp;&amp;
         element is ChangeNotifier) {
@@ -205,7 +205,7 @@ void removeAll(Iterable&lt;Object?&gt; elements) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

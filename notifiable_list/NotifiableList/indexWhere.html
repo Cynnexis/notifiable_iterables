@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">int</span>
-<span class="name ">indexWhere</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="indexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="name ">indexWhere</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="indexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="test-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 ), </span></li>
 <li><span class="parameter" id="indexWhere-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span></li>
@@ -87,7 +87,7 @@ notes.indexWhere((note) =&gt; note.startsWith('r'), 2);    // 3
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-int indexWhere(bool test(E? element), [int start = 0]) =&gt;
+int indexWhere(bool test(E element), [int start = 0]) =&gt;
     _values.indexWhere(test, start);</code></pre>
 </section>
 
@@ -213,7 +213,7 @@ int indexWhere(bool test(E? element), [int start = 0]) =&gt;
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -59,7 +59,7 @@
 
 <span class="returntype">void</span>
 <span class="name ">insert</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="insert-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="insert-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<li><span class="parameter" id="insert-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>)
 
       
@@ -79,7 +79,7 @@ The <code>index</code> value must be non-negative and no greater than <a href=".
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void insert(int index, E? element) {
+void insert(int index, E element) {
   RangeError.checkValidIndex(index, _values, &quot;index&quot;, length);
 
   &#47;&#47; Listen to the element if asked to and if it is possible
@@ -216,7 +216,7 @@ void insert(int index, E? element) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

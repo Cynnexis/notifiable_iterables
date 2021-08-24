@@ -57,12 +57,12 @@
   </ol>
 </div>
 
-<span class="returntype">V?</span>
-<span class="name ">update</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="update-param-key"><span class="type-annotation">K?</span> <span class="parameter-name">key</span>, </span></li>
-<li><span class="parameter" id="update-param-update"><span class="type-annotation">V?</span> <span class="parameter-name">update</span>(<ol class="parameter-list"><li><span class="parameter" id="param-value"><span class="type-annotation">V?</span> <span class="parameter-name">value</span></span></li>
+<span class="returntype">V</span>
+<span class="name ">update</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="update-param-key"><span class="type-annotation">K</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="update-param-update"><span class="type-annotation">V</span> <span class="parameter-name">update</span>(<ol class="parameter-list"><li><span class="parameter" id="update-param-value"><span class="type-annotation">V</span> <span class="parameter-name">value</span></span></li>
 </ol>
 ), </span></li>
-<li><span class="parameter" id="update-param-ifAbsent">{<span class="type-annotation">V?</span> <span class="parameter-name">ifAbsent</span>(<ol class="parameter-list"></ol>
+<li><span class="parameter" id="update-param-ifAbsent">{<span class="type-annotation">V</span> <span class="parameter-name">ifAbsent</span>(<ol class="parameter-list"></ol>
 )?}</span></li>
 </ol>)
 
@@ -85,8 +85,8 @@ and adds the key with the returned value to the map.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-V? update(K? key, V? update(V? value), {V? ifAbsent()?}) {
-  V? value = _values.update(key, update, ifAbsent: ifAbsent);
+V update(K key, V update(V value), {V ifAbsent()?}) {
+  V value = _values.update(key, update, ifAbsent: ifAbsent);
   notifyListeners();
   return value;
 }</code></pre>
@@ -174,7 +174,7 @@ V? update(K? key, V? update(V? value), {V? ifAbsent()?}) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

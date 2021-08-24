@@ -58,8 +58,8 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">operator []=</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="[]=-param-key"><span class="type-annotation">K?</span> <span class="parameter-name">key</span>, </span></li>
-<li><span class="parameter" id="[]=-param-value"><span class="type-annotation">V?</span> <span class="parameter-name">value</span></span></li>
+<span class="name ">operator []=</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="[]=-param-key"><span class="type-annotation">K</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="[]=-param-value"><span class="type-annotation">V</span> <span class="parameter-name">value</span></span></li>
 </ol>)
 
       
@@ -77,7 +77,7 @@ Otherwise the key/value pair is added to the map.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void operator []=(K? key, V? value) {
+void operator []=(K key, V value) {
   if (_values[key] != value) {
     _values[key] = value;
     notifyListeners();
@@ -167,7 +167,7 @@ void operator []=(K? key, V? value) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

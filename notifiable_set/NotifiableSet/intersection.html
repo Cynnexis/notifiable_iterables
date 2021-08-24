@@ -57,7 +57,7 @@
   </ol>
 </div>
 
-<span class="returntype"><a href="../../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+<span class="returntype"><a href="../../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
 <span class="name ">intersection</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="intersection-param-other"><span class="type-annotation">Set<span class="signature">&lt;<wbr><span class="type-parameter">Object?</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
 </ol>)
 
@@ -76,8 +76,8 @@ are also elements of <code>other</code> according to <code>other.contains</code>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-NotifiableSet&lt;E?&gt; intersection(Set&lt;Object?&gt; other) =&gt;
-    NotifiableSet&lt;E?&gt;.of(_values.intersection(other));</code></pre>
+NotifiableSet&lt;E&gt; intersection(Set&lt;Object?&gt; other) =&gt;
+    NotifiableSet&lt;E&gt;.of(_values.intersection(other));</code></pre>
 </section>
 
 
@@ -196,7 +196,7 @@ NotifiableSet&lt;E?&gt; intersection(Set&lt;Object?&gt; other) =&gt;
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

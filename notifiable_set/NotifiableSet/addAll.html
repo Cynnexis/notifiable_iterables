@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">addAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span></span></li>
+<span class="name ">addAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">elements</span></span></li>
 </ol>)
 
       
@@ -76,8 +76,8 @@ but some collections may be able to optimize it.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void addAll(Iterable&lt;E?&gt; elements) {
-  for (E? element in elements) {
+void addAll(Iterable&lt;E&gt; elements) {
+  for (E element in elements) {
     bool result = _values.add(element);
 
     &#47;&#47; Listen to the element if asked to and if it is possible
@@ -210,7 +210,7 @@ void addAll(Iterable&lt;E?&gt; elements) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

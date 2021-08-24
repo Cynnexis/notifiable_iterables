@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">addAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addAll-param-other"><span class="type-annotation">Map<span class="signature">&lt;<wbr><span class="type-parameter">K?</span>, <span class="type-parameter">V?</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
+<span class="name ">addAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addAll-param-other"><span class="type-annotation">Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
 </ol>)
 
       
@@ -78,7 +78,7 @@ therefore not change during the iteration.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void addAll(Map&lt;K?, V?&gt; other) {
+void addAll(Map&lt;K, V&gt; other) {
   _values.addAll(other);
   notifyListeners();
 }</code></pre>
@@ -166,7 +166,7 @@ void addAll(Map&lt;K?, V?&gt; other) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

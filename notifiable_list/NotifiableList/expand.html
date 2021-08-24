@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
-<span class="name ">expand</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="expand-param-f"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="name ">expand</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="expand-param-f"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -96,7 +96,7 @@ print(duplicated); // =&gt; [1, 1, 2, 2, 3, 3]
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Iterable&lt;T&gt; expand&lt;T&gt;(Iterable&lt;T&gt; Function(E? element) f) =&gt;
+Iterable&lt;T&gt; expand&lt;T&gt;(Iterable&lt;T&gt; Function(E element) f) =&gt;
     _values.expand&lt;T&gt;(f);</code></pre>
 </section>
 
@@ -222,7 +222,7 @@ Iterable&lt;T&gt; expand&lt;T&gt;(Iterable&lt;T&gt; Function(E? element) f) =&gt
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">bool</span>
-<span class="name ">every</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="every-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="name ">every</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="every-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -78,7 +78,7 @@ any of them make <code>test</code> return <code>false</code>, otherwise returns 
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-bool every(bool Function(E? element) test) =&gt; _values.every(test);</code></pre>
+bool every(bool Function(E element) test) =&gt; _values.every(test);</code></pre>
 </section>
 
 
@@ -197,7 +197,7 @@ bool every(bool Function(E? element) test) =&gt; _values.every(test);</code></pr
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

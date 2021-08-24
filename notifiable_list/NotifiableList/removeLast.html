@@ -57,7 +57,7 @@
   </ol>
 </div>
 
-<span class="returntype">E?</span>
+<span class="returntype">E</span>
 <span class="name ">removeLast</span>(<wbr>)
 
       
@@ -74,8 +74,8 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-E? removeLast() {
-  E? last = _values.removeLast();
+E removeLast() {
+  E last = _values.removeLast();
   &#47;&#47; Stop listening to child
   if (_propagateNotification &amp;&amp; last != null &amp;&amp; last is ChangeNotifier)
     last.removeListener(_propagate);
@@ -207,7 +207,7 @@ E? removeLast() {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
-<span class="name ">map</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="map-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-e"><span class="type-annotation">E?</span> <span class="parameter-name">e</span></span></li>
+<span class="name ">map</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="map-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-e"><span class="type-annotation">E</span> <span class="parameter-name">e</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -96,7 +96,7 @@ For example, <a href="../../notifiable_list/NotifiableList/elementAt.html">eleme
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Iterable&lt;T&gt; map&lt;T&gt;(T Function(E? e) f) =&gt; _values.map&lt;T&gt;(f);</code></pre>
+Iterable&lt;T&gt; map&lt;T&gt;(T Function(E e) f) =&gt; _values.map&lt;T&gt;(f);</code></pre>
 </section>
 
 
@@ -221,7 +221,7 @@ Iterable&lt;T&gt; map&lt;T&gt;(T Function(E? e) f) =&gt; _values.map&lt;T&gt;(f)
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -53,8 +53,8 @@
       
 
 <span class="returntype">void</span>
-<span class="name ">replace</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="replace-param-oldValue"><span class="type-annotation">E?</span> <span class="parameter-name">oldValue</span>, </span></li>
-<li><span class="parameter" id="replace-param-newValue"><span class="type-annotation">E?</span> <span class="parameter-name">newValue</span></span></li>
+<span class="name ">replace</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="replace-param-oldValue"><span class="type-annotation">E</span> <span class="parameter-name">oldValue</span>, </span></li>
+<li><span class="parameter" id="replace-param-newValue"><span class="type-annotation">E</span> <span class="parameter-name">newValue</span></span></li>
 </ol>)
 
       
@@ -70,9 +70,9 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void replace(E? oldValue, E? newValue) {
+  <pre class="language-dart"><code class="language-dart">void replace(E oldValue, E newValue) {
   bool found = false;
-  _values = Set&lt;E?&gt;.of(_values.map&lt;E?&gt;((E? e) {
+  _values = Set&lt;E&gt;.of(_values.map&lt;E&gt;((E e) {
     if (e == oldValue) {
       found = true;
       if (_propagateNotification &amp;&amp;
@@ -211,7 +211,7 @@
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

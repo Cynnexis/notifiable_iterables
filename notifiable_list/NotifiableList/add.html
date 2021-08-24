@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">add</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="add-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="name ">add</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="add-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>)
 
       
@@ -76,7 +76,7 @@ extending the length by one.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void add(E? element) {
+void add(E element) {
   &#47;&#47; Listen to the element if asked to and if it is possible
   if (_propagateNotification &amp;&amp;
       element != null &amp;&amp;
@@ -211,7 +211,7 @@ void add(E? element) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

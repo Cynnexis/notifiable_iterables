@@ -50,7 +50,7 @@
 </h1></div>
 
     <section class="multi-line-signature">
-      <span class="name ">NotifiableSet&lt;<wbr><span class="type-parameter">E</span>&gt;.of</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span></li>
+      <span class="name ">NotifiableSet&lt;<wbr><span class="type-parameter">E</span>&gt;.of</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span></li>
 <li><span class="parameter" id="of-param-propagateNotification">{<span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span></li>
 </ol>)
     </section>
@@ -67,9 +67,9 @@ listeners as well.</p>
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">NotifiableSet.of(Iterable&lt;E?&gt; elements, {propagateNotification = true})
+  <pre class="language-dart"><code class="language-dart">NotifiableSet.of(Iterable&lt;E&gt; elements, {propagateNotification = true})
     : super() {
-  _values = Set&lt;E?&gt;.of(elements);
+  _values = Set&lt;E&gt;.of(elements);
   this.propagateNotification = propagateNotification;
   if (_propagateNotification) _startPropagateNotification();
 }</code></pre>
@@ -191,7 +191,7 @@ listeners as well.</p>
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

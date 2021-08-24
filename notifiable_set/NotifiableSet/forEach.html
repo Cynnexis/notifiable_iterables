@@ -58,7 +58,7 @@
 </div>
 
 <span class="returntype">void</span>
-<span class="name ">forEach</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEach-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="name ">forEach</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEach-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -76,7 +76,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void forEach(void Function(E? element) f) {
+void forEach(void Function(E element) f) {
   _values.forEach(f);
   notifyListeners();
 }</code></pre>
@@ -198,7 +198,7 @@ void forEach(void Function(E? element) f) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -57,7 +57,7 @@
   </ol>
 </div>
 
-<span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+<span class="returntype">List<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
 <span class="name ">sublist</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="sublist-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span></li>
 <li><span class="parameter" id="sublist-param-end">[<span class="type-annotation">int?</span> <span class="parameter-name">end</span>]</span></li>
 </ol>)
@@ -87,7 +87,7 @@ If <code>end</code> is equal to <code>start</code>, then the returned list is em
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-List&lt;E?&gt; sublist(int start, [int? end]) =&gt; _values.sublist(start, end);</code></pre>
+List&lt;E&gt; sublist(int start, [int? end]) =&gt; _values.sublist(start, end);</code></pre>
 </section>
 
 
@@ -212,7 +212,7 @@ List&lt;E?&gt; sublist(int start, [int? end]) =&gt; _values.sublist(start, end);
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

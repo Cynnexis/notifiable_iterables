@@ -54,7 +54,7 @@
 
 <span class="returntype">bool</span>
 <span class="name ">insert</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="insert-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="insert-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<li><span class="parameter" id="insert-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>)
 
       
@@ -70,16 +70,16 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">bool insert(int index, E? element) {
+  <pre class="language-dart"><code class="language-dart">bool insert(int index, E element) {
   &#47;&#47; If the element is already in the set, stop here
   if (_values.contains(element)) return false;
 
   &#47;&#47; Store all elements from index 0 (included) to [index] (not included).
-  Set&lt;E?&gt; prefix = Set&lt;E?&gt;();
+  Set&lt;E&gt; prefix = Set&lt;E&gt;();
   for (int i = 0; i &lt; index; i++) prefix.add(_values.elementAt(i));
 
   &#47;&#47; Store all elements from [index] (included) to the end (included too)
-  Set&lt;E?&gt; suffix = Set&lt;E?&gt;();
+  Set&lt;E&gt; suffix = Set&lt;E&gt;();
   for (int i = index; i &lt; _values.length; i++)
     suffix.add(_values.elementAt(i));
 
@@ -228,7 +228,7 @@
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

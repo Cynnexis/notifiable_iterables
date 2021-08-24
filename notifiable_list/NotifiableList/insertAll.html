@@ -59,7 +59,7 @@
 
 <span class="returntype">void</span>
 <span class="name ">insertAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="insertAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="insertAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">iterable</span></span></li>
+<li><span class="parameter" id="insertAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">iterable</span></span></li>
 </ol>)
 
       
@@ -79,8 +79,8 @@ The <code>index</code> value must be non-negative and no greater than <a href=".
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void insertAll(int index, Iterable&lt;E?&gt; iterable) {
-  for (E? element in iterable) {
+void insertAll(int index, Iterable&lt;E&gt; iterable) {
+  for (E element in iterable) {
     &#47;&#47; Listen to the element if asked to and if it is possible
     if (_propagateNotification &amp;&amp;
         element != null &amp;&amp;
@@ -217,7 +217,7 @@ void insertAll(int index, Iterable&lt;E?&gt; iterable) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -57,9 +57,9 @@
   </ol>
 </div>
 
-<span class="returntype">V?</span>
-<span class="name ">putIfAbsent</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="putIfAbsent-param-key"><span class="type-annotation">K?</span> <span class="parameter-name">key</span>, </span></li>
-<li><span class="parameter" id="putIfAbsent-param-ifAbsent"><span class="type-annotation">V?</span> <span class="parameter-name">ifAbsent</span>(<ol class="parameter-list"></ol>
+<span class="returntype">V</span>
+<span class="name ">putIfAbsent</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="putIfAbsent-param-key"><span class="type-annotation">K</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="putIfAbsent-param-ifAbsent"><span class="type-annotation">V</span> <span class="parameter-name">ifAbsent</span>(<ol class="parameter-list"></ol>
 )</span></li>
 </ol>)
 
@@ -88,8 +88,8 @@ scores['Sophena'];  //  7
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-V? putIfAbsent(K? key, V? ifAbsent()) {
-  V? value = _values.putIfAbsent(key, ifAbsent);
+V putIfAbsent(K key, V ifAbsent()) {
+  V value = _values.putIfAbsent(key, ifAbsent);
   notifyListeners();
   return value;
 }</code></pre>
@@ -177,7 +177,7 @@ V? putIfAbsent(K? key, V? ifAbsent()) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

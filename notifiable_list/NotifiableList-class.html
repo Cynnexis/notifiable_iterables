@@ -99,7 +99,7 @@ extends <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class
           Create a <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a> by adding all elements from <code>elements</code>, regardless of their type. <a href="../notifiable_list/NotifiableList/NotifiableList.from.html">[...]</a>
         </dd>
         <dt id="NotifiableList.of" class="callable">
-          <span class="name"><a href="../notifiable_list/NotifiableList/NotifiableList.of.html">NotifiableList.of</a></span><span class="signature">(<span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span><span class="parameter" id="of-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>, </span><span class="parameter" id="of-param-propagateNotification"><span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span>)</span>
+          <span class="name"><a href="../notifiable_list/NotifiableList/NotifiableList.of.html">NotifiableList.of</a></span><span class="signature">(<span class="parameter" id="of-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">elements</span>, </span><span class="parameter" id="of-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>, </span><span class="parameter" id="of-param-propagateNotification"><span class="type-annotation">dynamic</span> <span class="parameter-name">propagateNotification</span> = <span class="default-value">true</span>}</span>)</span>
         </dt>
         <dd>
           Create a <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a> by adding all elements of <code>elements</code> of type <code>E</code>. <a href="../notifiable_list/NotifiableList/NotifiableList.of.html">[...]</a>
@@ -113,7 +113,7 @@ extends <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class
       <dl class="properties">
         <dt id="first" class="property">
   <span class="name"><a href="../notifiable_list/NotifiableList/first.html">first</a></span>
-  <span class="signature">&#8596; E?</span> 
+  <span class="signature">&#8596; E</span> 
 
 </dt>
 <dd>
@@ -168,7 +168,7 @@ extends <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class
 
         <dt id="iterator" class="property">
   <span class="name"><a href="../notifiable_list/NotifiableList/iterator.html">iterator</a></span>
-  <span class="signature">&#8594; Iterator<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> 
+  <span class="signature">&#8594; Iterator<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -180,7 +180,7 @@ extends <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier-class
 
         <dt id="last" class="property">
   <span class="name"><a href="../notifiable_list/NotifiableList/last.html">last</a></span>
-  <span class="signature">&#8596; E?</span> 
+  <span class="signature">&#8596; E</span> 
 
 </dt>
 <dd>
@@ -214,7 +214,7 @@ propagate. <a href="../notifiable_list/NotifiableList/propagateNotification.html
 
         <dt id="reversed" class="property">
   <span class="name"><a href="../notifiable_list/NotifiableList/reversed.html">reversed</a></span>
-  <span class="signature">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> 
+  <span class="signature">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> 
 
 </dt>
 <dd>
@@ -236,7 +236,7 @@ propagate. <a href="../notifiable_list/NotifiableList/propagateNotification.html
 
         <dt id="single" class="property">
   <span class="name"><a href="../notifiable_list/NotifiableList/single.html">single</a></span>
-  <span class="signature">&#8594; E?</span> 
+  <span class="signature">&#8594; E</span> 
 
 </dt>
 <dd>
@@ -252,7 +252,7 @@ propagate. <a href="../notifiable_list/NotifiableList/propagateNotification.html
       <h2>Methods</h2>
       <dl class="callables">
         <dt id="add" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/add.html">add</a></span><span class="signature">(<wbr><span class="parameter" id="add-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/add.html">add</a></span><span class="signature">(<wbr><span class="parameter" id="add-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -266,7 +266,7 @@ extending the length by one. <a href="../notifiable_list/NotifiableList/add.html
 </dd>
 
         <dt id="addAll" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/addAll.html">addAll</a></span><span class="signature">(<wbr><span class="parameter" id="addAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">elements</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/addAll.html">addAll</a></span><span class="signature">(<wbr><span class="parameter" id="addAll-param-elements"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">elements</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -292,7 +292,7 @@ extending the length by one. <a href="../notifiable_list/NotifiableList/add.html
 </dd>
 
         <dt id="any" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/any.html">any</a></span><span class="signature">(<wbr><span class="parameter" id="any-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/any.html">any</a></span><span class="signature">(<wbr><span class="parameter" id="any-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; bool</span>
   </span>
   
@@ -306,7 +306,7 @@ extending the length by one. <a href="../notifiable_list/NotifiableList/add.html
 
         <dt id="asMap" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/asMap.html">asMap</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; Map<span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -319,7 +319,7 @@ extending the length by one. <a href="../notifiable_list/NotifiableList/add.html
 
         <dt id="asNotifiableMap" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/asNotifiableMap.html">asNotifiableMap</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../notifiable_map/NotifiableMap-class.html">NotifiableMap</a><span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="../notifiable_map/NotifiableMap-class.html">NotifiableMap</a><span class="signature">&lt;<wbr><span class="type-parameter">int</span>, <span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -387,7 +387,7 @@ disposed). <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/di
 
         <dt id="elementAt" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/elementAt.html">elementAt</a></span><span class="signature">(<wbr><span class="parameter" id="elementAt-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>)
-    <span class="returntype parameter">&#8594; E?</span>
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -399,7 +399,7 @@ disposed). <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/di
 </dd>
 
         <dt id="every" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/every.html">every</a></span><span class="signature">(<wbr><span class="parameter" id="every-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/every.html">every</a></span><span class="signature">(<wbr><span class="parameter" id="every-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; bool</span>
   </span>
   
@@ -412,7 +412,7 @@ disposed). <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/di
 </dd>
 
         <dt id="expand" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/expand.html">expand</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="expand-param-f"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/expand.html">expand</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="expand-param-f"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
   </span>
   
@@ -438,8 +438,8 @@ disposed). <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/di
 </dd>
 
         <dt id="firstWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/firstWhere.html">firstWhere</a></span><span class="signature">(<wbr><span class="parameter" id="firstWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="firstWhere-param-orElse">{<span class="type-annotation">E?</span> <span class="parameter-name">orElse</span>()?}</span>)
-    <span class="returntype parameter">&#8594; E?</span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/firstWhere.html">firstWhere</a></span><span class="signature">(<wbr><span class="parameter" id="firstWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="firstWhere-param-orElse">{<span class="type-annotation">E</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -451,7 +451,7 @@ disposed). <a href="https://api.flutter.dev/flutter/foundation/ChangeNotifier/di
 </dd>
 
         <dt id="fold" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/fold.html">fold</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="fold-param-initialValue"><span class="type-annotation">T</span> <span class="parameter-name">initialValue</span>, </span><span class="parameter" id="fold-param-combine"><span class="type-annotation">T</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-previousValue"><span class="type-annotation">T</span> <span class="parameter-name">previousValue</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/fold.html">fold</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="fold-param-initialValue"><span class="type-annotation">T</span> <span class="parameter-name">initialValue</span>, </span><span class="parameter" id="fold-param-combine"><span class="type-annotation">T</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-previousValue"><span class="type-annotation">T</span> <span class="parameter-name">previousValue</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; T</span>
   </span>
   
@@ -465,8 +465,8 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="followedBy" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/followedBy.html">followedBy</a></span><span class="signature">(<wbr><span class="parameter" id="followedBy-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/followedBy.html">followedBy</a></span><span class="signature">(<wbr><span class="parameter" id="followedBy-param-other"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -478,7 +478,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="forEach" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/forEach.html">forEach</a></span><span class="signature">(<wbr><span class="parameter" id="forEach-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/forEach.html">forEach</a></span><span class="signature">(<wbr><span class="parameter" id="forEach-param-f"><span class="type-annotation">void</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -492,7 +492,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 
         <dt id="getRange" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/getRange.html">getRange</a></span><span class="signature">(<wbr><span class="parameter" id="getRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="getRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span></span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -504,7 +504,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="indexOf" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/indexOf.html">indexOf</a></span><span class="signature">(<wbr><span class="parameter" id="indexOf-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="indexOf-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/indexOf.html">indexOf</a></span><span class="signature">(<wbr><span class="parameter" id="indexOf-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="indexOf-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
     <span class="returntype parameter">&#8594; int</span>
   </span>
   
@@ -517,7 +517,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="indexWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/indexWhere.html">indexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="indexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="indexWhere-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/indexWhere.html">indexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="indexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="test-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="indexWhere-param-start">[<span class="type-annotation">int</span> <span class="parameter-name">start</span> = <span class="default-value">0</span>]</span>)
     <span class="returntype parameter">&#8594; int</span>
   </span>
   
@@ -530,7 +530,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="insert" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/insert.html">insert</a></span><span class="signature">(<wbr><span class="parameter" id="insert-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insert-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/insert.html">insert</a></span><span class="signature">(<wbr><span class="parameter" id="insert-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insert-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -543,7 +543,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="insertAll" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/insertAll.html">insertAll</a></span><span class="signature">(<wbr><span class="parameter" id="insertAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insertAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">iterable</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/insertAll.html">insertAll</a></span><span class="signature">(<wbr><span class="parameter" id="insertAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="insertAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">iterable</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -569,7 +569,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="lastIndexOf" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/lastIndexOf.html">lastIndexOf</a></span><span class="signature">(<wbr><span class="parameter" id="lastIndexOf-param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="lastIndexOf-param-start">[<span class="type-annotation">int?</span> <span class="parameter-name">start</span>]</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/lastIndexOf.html">lastIndexOf</a></span><span class="signature">(<wbr><span class="parameter" id="lastIndexOf-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span>, </span><span class="parameter" id="lastIndexOf-param-start">[<span class="type-annotation">int?</span> <span class="parameter-name">start</span>]</span>)
     <span class="returntype parameter">&#8594; int</span>
   </span>
   
@@ -582,7 +582,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="lastIndexWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/lastIndexWhere.html">lastIndexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastIndexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastIndexWhere-param-start">[<span class="type-annotation">int?</span> <span class="parameter-name">start</span>]</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/lastIndexWhere.html">lastIndexWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastIndexWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="test-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastIndexWhere-param-start">[<span class="type-annotation">int?</span> <span class="parameter-name">start</span>]</span>)
     <span class="returntype parameter">&#8594; int</span>
   </span>
   
@@ -595,8 +595,8 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="lastWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/lastWhere.html">lastWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastWhere-param-orElse">{<span class="type-annotation">E?</span> <span class="parameter-name">orElse</span>()?}</span>)
-    <span class="returntype parameter">&#8594; E?</span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/lastWhere.html">lastWhere</a></span><span class="signature">(<wbr><span class="parameter" id="lastWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="lastWhere-param-orElse">{<span class="type-annotation">E</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -608,7 +608,7 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="map" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/map.html">map</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="map-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-e"><span class="type-annotation">E?</span> <span class="parameter-name">e</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/map.html">map</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="map-param-f"><span class="type-annotation">T</span> <span class="parameter-name">f</span>(<span class="parameter" id="param-e"><span class="type-annotation">E</span> <span class="parameter-name">e</span></span>)</span>)
     <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
   </span>
   
@@ -647,8 +647,8 @@ element of the collection with an existing value <a href="../notifiable_list/Not
 </dd>
 
         <dt id="reduce" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/reduce.html">reduce</a></span><span class="signature">(<wbr><span class="parameter" id="reduce-param-combine"><span class="type-annotation">E?</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
-    <span class="returntype parameter">&#8594; E?</span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/reduce.html">reduce</a></span><span class="signature">(<wbr><span class="parameter" id="reduce-param-combine"><span class="type-annotation">E</span> <span class="parameter-name">combine</span>(<span class="parameter" id="param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span>, </span><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -675,7 +675,7 @@ of the collection using the provided function. <a href="../notifiable_list/Notif
 
         <dt id="removeAt" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/removeAt.html">removeAt</a></span><span class="signature">(<wbr><span class="parameter" id="removeAt-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>)
-    <span class="returntype parameter">&#8594; E?</span>
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -688,7 +688,7 @@ of the collection using the provided function. <a href="../notifiable_list/Notif
 
         <dt id="removeLast" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/removeLast.html">removeLast</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; E?</span>
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -727,7 +727,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="removeWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/removeWhere.html">removeWhere</a></span><span class="signature">(<wbr><span class="parameter" id="removeWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/removeWhere.html">removeWhere</a></span><span class="signature">(<wbr><span class="parameter" id="removeWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="test-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -740,7 +740,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="replaceRange" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/replaceRange.html">replaceRange</a></span><span class="signature">(<wbr><span class="parameter" id="replaceRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="replaceRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span>, </span><span class="parameter" id="replaceRange-param-replacement"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">replacement</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/replaceRange.html">replaceRange</a></span><span class="signature">(<wbr><span class="parameter" id="replaceRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="replaceRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span>, </span><span class="parameter" id="replaceRange-param-replacement"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">replacement</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -753,7 +753,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="retainWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/retainWhere.html">retainWhere</a></span><span class="signature">(<wbr><span class="parameter" id="retainWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/retainWhere.html">retainWhere</a></span><span class="signature">(<wbr><span class="parameter" id="retainWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="test-param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -766,7 +766,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="setAll" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/setAll.html">setAll</a></span><span class="signature">(<wbr><span class="parameter" id="setAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="setAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">iterable</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/setAll.html">setAll</a></span><span class="signature">(<wbr><span class="parameter" id="setAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="setAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">iterable</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -779,7 +779,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="setRange" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/setRange.html">setRange</a></span><span class="signature">(<wbr><span class="parameter" id="setRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="setRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span>, </span><span class="parameter" id="setRange-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">iterable</span>, </span><span class="parameter" id="setRange-param-skipCount">[<span class="type-annotation">int</span> <span class="parameter-name">skipCount</span> = <span class="default-value">0</span>]</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/setRange.html">setRange</a></span><span class="signature">(<wbr><span class="parameter" id="setRange-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="setRange-param-end"><span class="type-annotation">int</span> <span class="parameter-name">end</span>, </span><span class="parameter" id="setRange-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">iterable</span>, </span><span class="parameter" id="setRange-param-skipCount">[<span class="type-annotation">int</span> <span class="parameter-name">skipCount</span> = <span class="default-value">0</span>]</span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -805,8 +805,8 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="singleWhere" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/singleWhere.html">singleWhere</a></span><span class="signature">(<wbr><span class="parameter" id="singleWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="singleWhere-param-orElse">{<span class="type-annotation">E?</span> <span class="parameter-name">orElse</span>()?}</span>)
-    <span class="returntype parameter">&#8594; E?</span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/singleWhere.html">singleWhere</a></span><span class="signature">(<wbr><span class="parameter" id="singleWhere-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>), </span><span class="parameter" id="singleWhere-param-orElse">{<span class="type-annotation">E</span> <span class="parameter-name">orElse</span>()?}</span>)
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -819,7 +819,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="skip" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/skip.html">skip</a></span><span class="signature">(<wbr><span class="parameter" id="skip-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -831,8 +831,8 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="skipWhile" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/skipWhile.html">skipWhile</a></span><span class="signature">(<wbr><span class="parameter" id="skipWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)</span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/skipWhile.html">skipWhile</a></span><span class="signature">(<wbr><span class="parameter" id="skipWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -844,7 +844,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="sort" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/sort.html">sort</a></span><span class="signature">(<wbr><span class="parameter" id="sort-param-compare">[<span class="type-annotation">int</span> <span class="parameter-name">compare</span>(<span class="parameter" id="param-a"><span class="type-annotation">E?</span> <span class="parameter-name">a</span>, </span><span class="parameter" id="param-b"><span class="type-annotation">E?</span> <span class="parameter-name">b</span></span>)?]</span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/sort.html">sort</a></span><span class="signature">(<wbr><span class="parameter" id="sort-param-compare">[<span class="type-annotation">int</span> <span class="parameter-name">compare</span>(<span class="parameter" id="compare-param-a"><span class="type-annotation">E</span> <span class="parameter-name">a</span>, </span><span class="parameter" id="compare-param-b"><span class="type-annotation">E</span> <span class="parameter-name">b</span></span>)?]</span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -858,7 +858,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="sublist" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/sublist.html">sublist</a></span><span class="signature">(<wbr><span class="parameter" id="sublist-param-start"><span class="type-annotation">int</span> <span class="parameter-name">start</span>, </span><span class="parameter" id="sublist-param-end">[<span class="type-annotation">int?</span> <span class="parameter-name">end</span>]</span>)
-    <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -871,7 +871,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="take" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/take.html">take</a></span><span class="signature">(<wbr><span class="parameter" id="take-param-count"><span class="type-annotation">int</span> <span class="parameter-name">count</span></span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -883,8 +883,8 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="takeWhile" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/takeWhile.html">takeWhile</a></span><span class="signature">(<wbr><span class="parameter" id="takeWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)</span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/takeWhile.html">takeWhile</a></span><span class="signature">(<wbr><span class="parameter" id="takeWhile-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -897,7 +897,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="toList" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/toList.html">toList</a></span><span class="signature">(<wbr><span class="parameter" id="toList-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>}</span>)
-    <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; List<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -910,7 +910,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="toNotifiableList" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/toNotifiableList.html">toNotifiableList</a></span><span class="signature">(<wbr><span class="parameter" id="toNotifiableList-param-growable">{<span class="type-annotation">bool</span> <span class="parameter-name">growable</span> = <span class="default-value">true</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -923,7 +923,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="toNotifiableSet" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/toNotifiableSet.html">toNotifiableSet</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; <a href="../notifiable_set/NotifiableSet-class.html">NotifiableSet</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -936,7 +936,7 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 
         <dt id="toSet" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/toSet.html">toSet</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+    <span class="returntype parameter">&#8594; Set<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -961,8 +961,8 @@ notified when the object changes. <a href="https://api.flutter.dev/flutter/found
 </dd>
 
         <dt id="where" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span>)</span>)
-    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/where.html">where</a></span><span class="signature">(<wbr><span class="parameter" id="where-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -994,8 +994,8 @@ predicate <code>test</code>. <a href="../notifiable_list/NotifiableList/where.ht
       <h2>Operators</h2>
       <dl class="callables">
         <dt id="operator +" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/operator_plus.html">operator +</a></span><span class="signature">(<wbr><span class="parameter" id="+-param-other"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
+  <span class="name"><a href="../notifiable_list/NotifiableList/operator_plus.html">operator +</a></span><span class="signature">(<wbr><span class="parameter" id="+-param-other"><span class="type-annotation">List<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../notifiable_list/NotifiableList-class.html">NotifiableList</a><span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
   </span>
   
 
@@ -1021,7 +1021,7 @@ predicate <code>test</code>. <a href="../notifiable_list/NotifiableList/where.ht
 
         <dt id="operator []" class="callable">
   <span class="name"><a href="../notifiable_list/NotifiableList/operator_get.html">operator []</a></span><span class="signature">(<wbr><span class="parameter" id="[]-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span></span>)
-    <span class="returntype parameter">&#8594; E?</span>
+    <span class="returntype parameter">&#8594; E</span>
   </span>
   
 
@@ -1033,7 +1033,7 @@ predicate <code>test</code>. <a href="../notifiable_list/NotifiableList/where.ht
 </dd>
 
         <dt id="operator []=" class="callable">
-  <span class="name"><a href="../notifiable_list/NotifiableList/operator_put.html">operator []=</a></span><span class="signature">(<wbr><span class="parameter" id="[]=-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="[]=-param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)
+  <span class="name"><a href="../notifiable_list/NotifiableList/operator_put.html">operator []=</a></span><span class="signature">(<wbr><span class="parameter" id="[]=-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span><span class="parameter" id="[]=-param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
@@ -1184,7 +1184,7 @@ predicate <code>test</code>. <a href="../notifiable_list/NotifiableList/where.ht
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

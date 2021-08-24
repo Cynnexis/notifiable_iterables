@@ -59,7 +59,7 @@
 
 <span class="returntype">void</span>
 <span class="name ">operator []=</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="[]=-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="[]=-param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span></li>
+<li><span class="parameter" id="[]=-param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span></li>
 </ol>)
 
       
@@ -78,7 +78,7 @@ less than <a href="../../notifiable_list/NotifiableList/length.html">length</a>.
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void operator []=(int index, E? value) {
+void operator []=(int index, E value) {
   if (_values[index] != value) {
     &#47;&#47; Add&#47;remove listener callback
     if (_propagateNotification) {
@@ -216,7 +216,7 @@ void operator []=(int index, E? value) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

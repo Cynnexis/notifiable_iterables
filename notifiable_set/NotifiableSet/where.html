@@ -57,8 +57,8 @@
   </ol>
 </div>
 
-<span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span>
-<span class="name ">where</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="where-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E?</span> <span class="parameter-name">element</span></span></li>
+<span class="returntype">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span>
+<span class="name ">where</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="where-param-test"><span class="type-annotation">bool</span> <span class="parameter-name">test</span>(<ol class="parameter-list"><li><span class="parameter" id="param-element"><span class="type-annotation">E</span> <span class="parameter-name">element</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -85,7 +85,7 @@ function <code>test</code> multiple times on the same element.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Iterable&lt;E?&gt; where(bool Function(E? element) test) =&gt; _values.where(test);</code></pre>
+Iterable&lt;E&gt; where(bool Function(E element) test) =&gt; _values.where(test);</code></pre>
 </section>
 
 
@@ -204,7 +204,7 @@ Iterable&lt;E?&gt; where(bool Function(E? element) test) =&gt; _values.where(tes
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

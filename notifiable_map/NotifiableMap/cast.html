@@ -74,6 +74,12 @@ If any operation exposes a non-<code>RK</code> key or non-<code>RV</code> value,
 the operation will throw instead.</p>
 <p>Entries added to the map must be valid for both a <code>Map&lt;K, V&gt;</code> and a
 <code>Map&lt;RK, RV&gt;</code>.</p>
+<p>Methods like <a href="../../notifiable_map/NotifiableMap/containsKey.html">containsKey</a>, <a href="../../notifiable_map/NotifiableMap/remove.html">remove</a> and <a href="../../notifiable_map/NotifiableMap/operator_get.html">operator[]</a>
+which accept <code>Object?</code> as argument
+will pass the argument directly to the this map's method
+without any checks.
+That means that you can do <code>mapWithStringKeys.cast&lt;int,int&gt;().remove("a")</code>
+successfully, even if it looks like it shouldn't have any effect.</p>
 </section>
 
 
@@ -166,7 +172,7 @@ Map&lt;RK, RV&gt; cast&lt;RK, RV&gt;() =&gt; _values.cast&lt;RK, RV&gt;();</code
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

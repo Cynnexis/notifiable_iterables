@@ -87,7 +87,7 @@ void removeRange(int start, int end) {
 
   &#47;&#47; Stop listening to the element that will be replaced
   for (int i = start; i &lt; end; i++) {
-    E? element = elementAt(i);
+    E element = elementAt(i);
     if (_propagateNotification &amp;&amp;
         element != null &amp;&amp;
         element is ChangeNotifier) {
@@ -222,7 +222,7 @@ void removeRange(int start, int end) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

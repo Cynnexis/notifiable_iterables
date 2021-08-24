@@ -54,7 +54,7 @@
 <section id="getter">
 
 <section class="multi-line-signature">
-  <span class="returntype">E?</span>
+  <span class="returntype">E</span>
   <span class="name ">first</span>
   
 
@@ -72,7 +72,7 @@ equivalent to <code>this.elementAt(0)</code>.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-E? get first =&gt; _values.first;</code></pre>
+E get first =&gt; _values.first;</code></pre>
 </section>
 
 </section>
@@ -83,7 +83,7 @@ E? get first =&gt; _values.first;</code></pre>
 
 <section class="multi-line-signature">
   <span class="returntype">void</span>
-  <span class="name ">first=</span><span class="signature">(<wbr><span class="parameter" id="first=-param-value"><span class="type-annotation">E?</span> <span class="parameter-name">value</span></span>)</span>
+  <span class="name ">first=</span><span class="signature">(<wbr><span class="parameter" id="first=-param-value"><span class="type-annotation">E</span> <span class="parameter-name">value</span></span>)</span>
   
 
 </section>
@@ -99,7 +99,7 @@ E? get first =&gt; _values.first;</code></pre>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-set first(E? value) {
+set first(E value) {
   _values.first = value;
   notifyListeners();
 }</code></pre>
@@ -228,7 +228,7 @@ set first(E? value) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

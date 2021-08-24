@@ -77,7 +77,7 @@ listeners as well.</p>
 NotifiableList.from(Iterable&lt;dynamic&gt; elements,
     {bool growable = true, propagateNotification = true})
     : super() {
-  _values = List&lt;E?&gt;.from(elements, growable: growable);
+  _values = List&lt;E&gt;.from(elements, growable: growable);
   this.propagateNotification = propagateNotification;
   if (_propagateNotification) _startPropagateNotification();
 }</code></pre>
@@ -205,7 +205,7 @@ NotifiableList.from(Iterable&lt;dynamic&gt; elements,
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

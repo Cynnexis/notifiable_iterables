@@ -50,7 +50,7 @@
 </h1></div>
 
     <section class="multi-line-signature">
-      <span class="name ">NotifiableMap&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;.of</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="of-param-other"><span class="type-annotation">Map<span class="signature">&lt;<wbr><span class="type-parameter">K?</span>, <span class="type-parameter">V?</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
+      <span class="name ">NotifiableMap&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;.of</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="of-param-other"><span class="type-annotation">Map<span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">other</span></span></li>
 </ol>)
     </section>
 
@@ -63,8 +63,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">NotifiableMap.of(Map&lt;K?, V?&gt; other) : super() {
-  _values = Map&lt;K?, V?&gt;.of(other);
+  <pre class="language-dart"><code class="language-dart">NotifiableMap.of(Map&lt;K, V&gt; other) : super() {
+  _values = Map&lt;K, V&gt;.of(other);
 }</code></pre>
 </section>
 
@@ -150,7 +150,7 @@
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   

@@ -59,7 +59,7 @@
 
 <span class="returntype">void</span>
 <span class="name ">setAll</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="setAll-param-index"><span class="type-annotation">int</span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="setAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></span> <span class="parameter-name">iterable</span></span></li>
+<li><span class="parameter" id="setAll-param-iterable"><span class="type-annotation">Iterable<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></span> <span class="parameter-name">iterable</span></span></li>
 </ol>)
 
       
@@ -87,12 +87,12 @@ to <a href="../../notifiable_list/NotifiableList/length.html">length</a>.</p>
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-void setAll(int index, Iterable&lt;E?&gt; iterable) {
+void setAll(int index, Iterable&lt;E&gt; iterable) {
   RangeError.checkValidRange(index, index + iterable.length, length, &quot;index&quot;,
       &quot;index + iterable.length&quot;);
 
   &#47;&#47; Listen to the element that will be added
-  for (E? element in iterable) {
+  for (E element in iterable) {
     if (_propagateNotification &amp;&amp;
         element != null &amp;&amp;
         element is ChangeNotifier) {
@@ -102,7 +102,7 @@ void setAll(int index, Iterable&lt;E?&gt; iterable) {
 
   &#47;&#47; Stop listening to the element that will be replaced
   for (int i = index; i &lt; index + iterable.length; i++) {
-    E? element = elementAt(i);
+    E element = elementAt(i);
     if (_propagateNotification &amp;&amp;
         element != null &amp;&amp;
         element is ChangeNotifier) {
@@ -237,7 +237,7 @@ void setAll(int index, Iterable&lt;E?&gt; iterable) {
 <footer>
   <span class="no-break">
     notifiable_iterables
-      1.1.1
+      1.2.0
   </span>
 
   
