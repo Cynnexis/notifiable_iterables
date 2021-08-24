@@ -368,8 +368,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   Iterable<T> map<T>(T Function(E e) f) => _values.map<T>(f);
 
   @override
-  E reduce(E Function(E value, E element) combine) =>
-      _values.reduce(combine);
+  E reduce(E Function(E value, E element) combine) => _values.reduce(combine);
 
   @override
   E singleWhere(bool Function(E element) test, {E Function()? orElse}) =>
@@ -379,15 +378,13 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   Iterable<E> skip(int count) => _values.skip(count);
 
   @override
-  Iterable<E> skipWhile(bool Function(E value) test) =>
-      _values.skipWhile(test);
+  Iterable<E> skipWhile(bool Function(E value) test) => _values.skipWhile(test);
 
   @override
   Iterable<E> take(int count) => _values.take(count);
 
   @override
-  Iterable<E> takeWhile(bool Function(E value) test) =>
-      _values.takeWhile(test);
+  Iterable<E> takeWhile(bool Function(E value) test) => _values.takeWhile(test);
 
   @override
   List<E> toList({bool growable = true}) => _values.toList(growable: growable);
@@ -411,8 +408,7 @@ class NotifiableSet<E> extends ChangeNotifier implements Set<E> {
   }
 
   /// Return a [NotifiableMap] where the keys are the indices and the values the elements of this set.
-  NotifiableMap<int, E> asNotifiableMap() =>
-      NotifiableMap<int, E>.of(asMap());
+  NotifiableMap<int, E> asNotifiableMap() => NotifiableMap<int, E>.of(asMap());
 
   @override
   NotifiableSet<E> difference(Set<Object?> other) =>

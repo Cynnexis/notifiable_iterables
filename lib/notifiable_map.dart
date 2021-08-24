@@ -61,8 +61,7 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
   bool containsKey(Object? key) => _values.containsKey(key);
 
   @override
-  Map<RK, RV> map<RK, RV>(MapEntry<RK, RV> f(K key, V value)) =>
-      _values.map(f);
+  Map<RK, RV> map<RK, RV>(MapEntry<RK, RV> f(K key, V value)) => _values.map(f);
 
   @override
   void addEntries(Iterable<MapEntry<K, V>> newEntries) {

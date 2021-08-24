@@ -277,8 +277,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   }
 
   @override
-  void setRange(int start, int end, Iterable<E> iterable,
-      [int skipCount = 0]) {
+  void setRange(int start, int end, Iterable<E> iterable, [int skipCount = 0]) {
     _values.setRange(start, end, iterable, skipCount);
     notifyListeners();
   }
@@ -419,8 +418,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   Iterable<T> map<T>(T Function(E e) f) => _values.map<T>(f);
 
   @override
-  E reduce(E Function(E value, E element) combine) =>
-      _values.reduce(combine);
+  E reduce(E Function(E value, E element) combine) => _values.reduce(combine);
 
   @override
   E singleWhere(bool Function(E element) test, {E Function()? orElse}) =>
@@ -430,15 +428,13 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   Iterable<E> skip(int count) => _values.skip(count);
 
   @override
-  Iterable<E> skipWhile(bool Function(E value) test) =>
-      _values.skipWhile(test);
+  Iterable<E> skipWhile(bool Function(E value) test) => _values.skipWhile(test);
 
   @override
   Iterable<E> take(int count) => _values.take(count);
 
   @override
-  Iterable<E> takeWhile(bool Function(E value) test) =>
-      _values.takeWhile(test);
+  Iterable<E> takeWhile(bool Function(E value) test) => _values.takeWhile(test);
 
   @override
   List<E> toList({bool growable = true}) => _values.toList(growable: growable);
@@ -457,8 +453,7 @@ class NotifiableList<E> extends ChangeNotifier implements List<E> {
   Map<int, E> asMap() => _values.asMap();
 
   /// Return a [NotifiableMap] where the keys are the indices and the values the elements of this list.
-  NotifiableMap<int, E> asNotifiableMap() =>
-      NotifiableMap<int, E>.of(asMap());
+  NotifiableMap<int, E> asNotifiableMap() => NotifiableMap<int, E>.of(asMap());
 
   @override
   Iterable<E> getRange(int start, int end) => _values.getRange(start, end);
