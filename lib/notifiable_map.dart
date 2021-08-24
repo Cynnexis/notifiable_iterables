@@ -5,18 +5,18 @@ import 'package:flutter/widgets.dart';
 /// This map will notify its listener when a change is detected (an entry has been added, removed, updated, etc... or
 /// the map has been sorted, mapped, etc...). However, it won't notify its listener if its items are changed, even if
 /// they extends [ChangeNotifier].
-class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
+class NotifiableMap<K, V> extends ChangeNotifier implements Map<K, V> {
   /// The real map containing the values. Most of the functions in this class just redirect to the functions of this
   /// attribute.
-  late Map<K?, V?> _values;
+  late Map<K, V> _values;
 
   //region PROPERTIES
 
   @override
-  Iterable<K?> get keys => _values.keys;
+  Iterable<K> get keys => _values.keys;
 
   @override
-  Iterable<V?> get values => _values.values;
+  Iterable<V> get values => _values.values;
 
   @override
   int get length => _values.length;
@@ -28,7 +28,7 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
   bool get isNotEmpty => _values.isNotEmpty;
 
   @override
-  Iterable<MapEntry<K?, V?>> get entries => _values.entries;
+  Iterable<MapEntry<K, V>> get entries => _values.entries;
 
   //endregion
 
@@ -36,17 +36,17 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
 
   /// Create an empty [NotifiableMap].
   NotifiableMap() : super() {
-    _values = Map<K?, V?>();
+    _values = Map<K, V>();
   }
 
   /// Create a [NotifiableMap] by adding all elements of [other] of types [K], [V].
-  NotifiableMap.of(Map<K?, V?> other) : super() {
-    _values = Map<K?, V?>.of(other);
+  NotifiableMap.of(Map<K, V> other) : super() {
+    _values = Map<K, V>.of(other);
   }
 
   /// Create a [NotifiableMap] by adding all elements from [other], regardless of their type.
-  NotifiableMap.from(Map<K?, V?> other) : super() {
-    _values = Map<K?, V?>.from(other);
+  NotifiableMap.from(Map<K, V> other) : super() {
+    _values = Map<K, V>.from(other);
   }
 
   //endregion
@@ -61,43 +61,42 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
   bool containsKey(Object? key) => _values.containsKey(key);
 
   @override
-  Map<RK, RV> map<RK, RV>(MapEntry<RK, RV> f(K? key, V? value)) =>
-      _values.map(f);
+  Map<RK, RV> map<RK, RV>(MapEntry<RK, RV> f(K key, V value)) => _values.map(f);
 
   @override
-  void addEntries(Iterable<MapEntry<K?, V?>> newEntries) {
+  void addEntries(Iterable<MapEntry<K, V>> newEntries) {
     _values.addEntries(newEntries);
     notifyListeners();
   }
 
   @override
-  V? update(K? key, V? update(V? value), {V? ifAbsent()?}) {
-    V? value = _values.update(key, update, ifAbsent: ifAbsent);
+  V update(K key, V update(V value), {V ifAbsent()?}) {
+    V value = _values.update(key, update, ifAbsent: ifAbsent);
     notifyListeners();
     return value;
   }
 
   @override
-  void updateAll(V? update(K? key, V? value)) {
+  void updateAll(V update(K key, V value)) {
     _values.updateAll(update);
     notifyListeners();
   }
 
   @override
-  void removeWhere(bool predicate(K? key, V? value)) {
+  void removeWhere(bool predicate(K key, V value)) {
     _values.removeWhere(predicate);
     notifyListeners();
   }
 
   @override
-  V? putIfAbsent(K? key, V? ifAbsent()) {
-    V? value = _values.putIfAbsent(key, ifAbsent);
+  V putIfAbsent(K key, V ifAbsent()) {
+    V value = _values.putIfAbsent(key, ifAbsent);
     notifyListeners();
     return value;
   }
 
   @override
-  void addAll(Map<K?, V?> other) {
+  void addAll(Map<K, V> other) {
     _values.addAll(other);
     notifyListeners();
   }
@@ -118,7 +117,7 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
   }
 
   @override
-  void forEach(void f(K? key, V? value)) {
+  void forEach(void f(K key, V value)) {
     _values.forEach(f);
     notifyListeners();
   }
@@ -126,8 +125,8 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
   //region OPERATORS
 
   /// Creates a new [NotifiableMap] that contains the entries of this map and the elements of [other] in that order.
-  NotifiableMap<K?, V?> operator +(NotifiableMap<K?, V?> other) {
-    NotifiableMap<K?, V?> newSet = NotifiableMap<K?, V?>.of(_values);
+  NotifiableMap<K, V> operator +(NotifiableMap<K, V> other) {
+    NotifiableMap<K, V> newSet = NotifiableMap<K, V>.of(_values);
     newSet.addAll(other);
     return newSet;
   }
@@ -136,7 +135,7 @@ class NotifiableMap<K, V> extends ChangeNotifier implements Map<K?, V?> {
   V? operator [](Object? key) => _values[key as K];
 
   @override
-  void operator []=(K? key, V? value) {
+  void operator []=(K key, V value) {
     if (_values[key] != value) {
       _values[key] = value;
       notifyListeners();

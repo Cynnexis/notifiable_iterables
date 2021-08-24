@@ -2,7 +2,7 @@ version: '3.7'
 services:
   test:
     container_name: notifiable-iterables-test
-    image: cynnexis/notifiableiterables
+    image: cynnexis/notifiable_iterables
     volumes:
       - "./lib:/build/lib"
       - "./coverage:/build/coverage"
@@ -14,7 +14,7 @@ services:
 
   lint:
     container_name: notifiable-iterables-lint
-    image: cynnexis/notifiableiterables
+    image: cynnexis/notifiable_iterables
     volumes:
       - "./lib:/build/lib"
       - "./test:/build/test"
@@ -23,7 +23,7 @@ services:
 
   doc:
     container_name: notifiable-iterables-doc
-    image: cynnexis/notifiableiterables
+    image: cynnexis/notifiable_iterables
     volumes:
       - "./:/build/"
     command: doc

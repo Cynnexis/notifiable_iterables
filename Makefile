@@ -54,19 +54,19 @@ clean:
 	rm -f .coverage
 
 build-docker:
-	docker build -t cynnexis/notifiableiterables .
+	docker build -t cynnexis/notifiable_iterables .
 
 docker-test:
-	$(DCK_CMP_UP) test lint
+	docker run --rm -it cynnexis/notifiable_iterables test
 
 docker-lint:
-	$(DCK_CMP_UP) lint
+	docker run --rm -it cynnexis/notifiable_iterables lint
 
 docker-doc:
-	docker run --rm -it -v "$$(pwd):/build" cynnexis/notifiableiterables doc
+	docker run --rm -it -v "$$(pwd):/build" cynnexis/notifiable_iterables doc
 
 docker-publish:
-	docker run --rm -it -v "$$(pwd):/build" cynnexis/notifiableiterables publish
+	docker run --rm -it cynnexis/notifiable_iterables publish
 
 docker-down:
 	docker-compose down --remove-orphans --volumes
